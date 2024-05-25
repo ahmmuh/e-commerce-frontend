@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function Delete() {
-  return (
-    <div>Delete</div>
-  )
+function DeleteMobile() {
+  return <div>DeleteMobile</div>;
 }
 
-export default Delete
+export default DeleteMobile;

@@ -4,15 +4,17 @@ import StartPage from "./components/Start/StartPage";
 import MobileRoute from "./routes/electronics/mobiles/MobileRoute";
 import LaptopRoute from "./routes/electronics/laptops/LaptopRoute";
 import IpadRoute from "./routes/electronics/ipads/IpadRoute";
+import ElectronicsRoute from "./routes/electronics/electronicsroute/ElectronicsRoute";
+import Content from "./components/dashboard/content/Content";
+import SearchAppBar from "./components/menu/TopBar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
+      <SearchAppBar />
       <Routes>
-        <Route path="/" element={<StartPage />} />
-        <Route path="/mobiles/*" element={<MobileRoute />} />
-        <Route path="/laptops/*" element={<LaptopRoute />} />
-        <Route path="/ipads/*" element={<IpadRoute />} />
+        <Route path="/" element={<Content />} />
+        <Route path="/electronics/*" element={<ElectronicsRoute />} />
       </Routes>
     </div>
   );

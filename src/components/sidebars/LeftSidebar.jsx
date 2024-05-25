@@ -1,24 +1,46 @@
-import React from "react";
-import { containerStyle } from "../globalStyles/containerStyle";
-import { Link } from "react-router-dom";
+import * as React from "react";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import Avatar from "@mui/material/Avatar";
+import ImageIcon from "@mui/icons-material/Image";
+import WorkIcon from "@mui/icons-material/Work";
+import BeachAccessIcon from "@mui/icons-material/BeachAccess";
 
-function LeftSidebar() {
+export default function LeftSidebar() {
   return (
-    <div
-      className="col-3"
-      style={{ backgroundColor: "#3399ff", color: "white" }}
+    <List
+      sx={{
+        width: "100%",
+        height: "100vh",
+        bgcolor: "background.paper",
+      }}
     >
-      <ul className="list-group " style={{ backgroundColor: "inherit" }}>
-        <Link to={"/"}>Dashboard</Link>
-        <Link to={"/electronics"}>Electronics</Link>
-        <Link to={"/hobies"}>Hobies</Link>
-        <Link to={"/vehicles"}>Fordon</Link>
-        <Link to={"/houses"}>Houses</Link>
-        <Link to={"/furnitures"}>Furnitures</Link>
-        <Link to={"/users"}>Clothes</Link>
-      </ul>
-    </div>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>
+            <ImageIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>
+            <WorkIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary="Work" secondary="Jan 7, 2014" />
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>
+            <BeachAccessIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+      </ListItem>
+    </List>
   );
 }
-
-export default LeftSidebar;
