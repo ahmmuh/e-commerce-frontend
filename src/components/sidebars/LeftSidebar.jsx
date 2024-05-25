@@ -1,5 +1,6 @@
 import React from "react";
 import { containerStyle } from "../globalStyles/containerStyle";
+import { Link } from "react-router-dom";
 
 function LeftSidebar() {
   return (
@@ -8,11 +9,13 @@ function LeftSidebar() {
       style={{ backgroundColor: "#3399ff", color: "white" }}
     >
       <ul className="list-group " style={{ backgroundColor: "inherit" }}>
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">A second item</li>
-        <li className="list-group-item">A third item</li>
-        <li className="list-group-item">A fourth item</li>
-        <li className="list-group-item">And a fifth one</li>
+        <Link to={"/"}>Dashboard</Link>
+        <Link to={"/electronics"}>Electronics</Link>
+        <Link to={"/hobies"}>Hobies</Link>
+        <Link to={"/vehicles"}>Fordon</Link>
+        <Link to={"/houses"}>Houses</Link>
+        <Link to={"/furnitures"}>Furnitures</Link>
+        <Link to={"/users"}>Clothes</Link>
       </ul>
     </div>
   );

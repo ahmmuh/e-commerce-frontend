@@ -5,6 +5,7 @@ import {
   leftAndContentBAckgroundColor,
 } from "../../globalStyles/containerStyle";
 import ChartCard from "../../../reuseableComponents/ChartCard";
+import { Outlet } from "react-router-dom";
 
 function Content() {
   return (
@@ -41,7 +42,7 @@ function Content() {
         </div>
       </div>
       <div className="row">
-        <h2>Lorem ipsum dolor sit amet</h2>
+        <Outlet />
       </div>
     </div>
   );
