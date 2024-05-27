@@ -1,6 +1,6 @@
 import React from "react";
-import LeftSidebar from "../sidebars/LeftSidebar";
-import Content from "../dashboard/content/Content";
+import LeftSidebar from "../dashboard/LeftSidebar";
+import Content from "../dashboard/Content";
 import Navbar from "../menu/Navbar";
 
 function StartPage() {

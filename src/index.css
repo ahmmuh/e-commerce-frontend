@@ -5,5 +5,10 @@
 @import "@fontsource/roboto/700.css";
 
 body {
-  background-color: #e0eded;
+  /* //background-color: #e0eded; */
+}
+.sidebar {
+  background-color: aliceblue;
+  height: 100vh;
+  margin: 0;
 }
