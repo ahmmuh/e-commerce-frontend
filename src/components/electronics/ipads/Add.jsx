@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function Add() {
-  return (
-    <div>Add ipads</div>
-  )
-}
+const Add = () => {
+  return <div>Add ipads</div>;
+};
 
-export default Add
+export default Add;

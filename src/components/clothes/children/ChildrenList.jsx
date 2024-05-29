@@ -1,7 +1,7 @@
 import React from "react";
 
-function ChildrenList() {
+const ChildrenList = () => {
   return <div>ChildrenList</div>;
-}
+};
 
 export default ChildrenList;

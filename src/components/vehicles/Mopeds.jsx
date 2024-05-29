@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Mopeds() {
+const Mopeds = () =>  {
   return (
     <div>Mopeds</div>
   )

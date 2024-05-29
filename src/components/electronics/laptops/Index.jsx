@@ -1,6 +1,6 @@
 import React from "react";
 
-function Index() {
+const Index = () =>  {
   return <div>Laptop Index</div>;
 }
 

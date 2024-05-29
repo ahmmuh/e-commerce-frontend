@@ -1,6 +1,6 @@
 import React from "react";
 
-function Delete() {
+const Delete = () =>  {
   return <div>Delete</div>;
 }
 

@@ -1,8 +1,7 @@
-import { Button } from "@mui/material";
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
-function MobilePage() {
+const MobilePage = () =>  {
   return (
     <div classNameName="container">
       <nav className="nav justify-content-center  ">

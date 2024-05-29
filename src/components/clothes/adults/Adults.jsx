@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function Adults() {
-  return (
-    <div>Adults</div>
-  )
-}
+const Adults = () => {
+  return <div>Adults</div>;
+};
 
-export default Adults
+export default Adults;

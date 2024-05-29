@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Tracks() {
+const Tracks = () =>  {
   return (
     <div>Tracks</div>
   )

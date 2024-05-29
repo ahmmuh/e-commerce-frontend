@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function Clothes() {
-  return (
-    <div>Clothes</div>
-  )
-}
+const Clothes = () => {
+  return <div>Clothes</div>;
+};
 
-export default Clothes
+export default Clothes;

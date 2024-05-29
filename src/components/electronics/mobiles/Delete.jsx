@@ -1,6 +1,6 @@
 import React from "react";
 
-function DeleteMobile() {
+const DeleteMobile = () =>  {
   return <div>DeleteMobile</div>;
 }
 

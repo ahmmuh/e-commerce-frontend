@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import MobilePage from "./mobiles/MobilePage";
 
-function ElectronicList() {
+const ElectronicList = () => {
   return (
     <div className="container">
       <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -52,6 +52,6 @@ function ElectronicList() {
       <Outlet />
     </div>
   );
-}
+};
 
 export default ElectronicList;

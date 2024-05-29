@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function Boys() {
-  return (
-    <div>Boys</div>
-  )
-}
+const Boys = () => {
+  return <div>Boys</div>;
+};
 
-export default Boys
+export default Boys;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function LaptopPage() {
+const LaptopPage = () =>  {
   return <div>Laptop Page</div>;
 }
 

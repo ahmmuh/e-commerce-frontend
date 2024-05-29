@@ -1,6 +1,6 @@
 import React from "react";
 
-function NotFound() {
+const NotFound = () =>  {
   return (
     <div className="container">
       <div className="row w-50 m-auto">

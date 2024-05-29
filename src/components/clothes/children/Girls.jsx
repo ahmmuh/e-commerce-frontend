@@ -1,7 +1,7 @@
 import React from "react";
 
-function Girls() {
+const Girls = () => {
   return <div>Girls</div>;
-}
+};
 
 export default Girls;

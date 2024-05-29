@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
-function Index() {
+const Index = () => {
   return (
     <>
       <nav className="navbar navbar-expand-sm navbar-light bg-light">
@@ -33,26 +33,6 @@ function Index() {
                   <span className="visually-hidden">(current)</span>
                 </Link>
               </li>
-
-              <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  to={":id"}
-                  aria-current="page"
-                >
-                  Update
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  to={":id"}
-                  aria-current="page"
-                >
-                  Delete
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
@@ -62,6 +42,6 @@ function Index() {
       </div>
     </>
   );
-}
+};
 
 export default Index;

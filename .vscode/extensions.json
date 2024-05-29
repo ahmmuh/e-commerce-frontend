@@ -1,6 +1,11 @@
 {
   "recommendations": [
     "anbuselvanrocky.bootstrap5-vscode",
-    "hossaini.bootstrap-intellisense"
+    "hossaini.bootstrap-intellisense",
+    "mronline.react-import-sorter",
+    "burkeholland.simple-react-snippets",
+    "dsznajder.es7-react-js-snippets",
+    "pkief.material-icon-theme",
+    "christian-kohler.path-intellisense"
   ]
 }
