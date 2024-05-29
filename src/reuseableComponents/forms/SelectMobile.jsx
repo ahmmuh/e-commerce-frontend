@@ -11,7 +11,7 @@ const SelectMobile = ({ label, options, changeHandler, ...props }) => {
   console.log("Props från dashboard för mobiler", options);
   return (
     <div className="container">
-      <FormControl fullWidth>
+      <FormControl fullWidth variant="standard">
         {/* <InputLabel>{label}</InputLabel> */}
         <InputLabel htmlFor={label}>{label}</InputLabel>
 

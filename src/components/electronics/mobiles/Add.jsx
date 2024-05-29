@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SelectMobile from "../../../reuseableComponents/forms/SelectMobile";
 import { options } from "../../../data/mobile";
 import { Button } from "@mui/material";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 
 const Add = () => {
   const [selectedValues, setSelectedValues] = useState({
@@ -28,6 +29,9 @@ const Add = () => {
 
   return (
     <div className="container mt-2">
+      <h3 className="lead">
+        Sälj telefon <PhoneIphoneIcon />
+      </h3>
       <div className="row">
         <form>
           <SelectMobile
