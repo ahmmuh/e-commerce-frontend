@@ -71,6 +71,7 @@ export default function AppSearchBar() {
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             {/* <Link to="/">E-commerce</Link> */}
+            E-commerce
           </Typography>
           <Search>
             <SearchIconWrapper>

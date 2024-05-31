@@ -13,10 +13,6 @@ import NotFound from "./components/error/NotFound";
 import ElectronicList from "./components/electronics/ElectronicList";
 import Clothes from "./components/clothes/Clothes";
 import LaptopPage from "./components/electronics/laptops/LaptopPage";
-import Vehicles from "./components/vehicles/VehicleList";
-import Cars from "./components/vehicles/Cars";
-import Tracks from "./components/vehicles/Tracks";
-import Mopeds from "./components/vehicles/Mopeds";
 import Adults from "./components/clothes/adults/Adults";
 import Women from "./components/clothes/adults/Women";
 import ChildrenList from "./components/clothes/children/ChildrenList";
@@ -29,10 +25,17 @@ import IpadPage from "./components/electronics/ipads/IpadPage";
 import AddIpad from "./components/electronics/ipads/AddIpad";
 import AddLaptop from "./components/electronics/laptops/AddLaptop";
 import DesktopPage from "./components/electronics/desktops/DesktopPage";
-import { chipClasses } from "@mui/material";
 import AddDesktop from "./components/electronics/desktops/AddDesktop";
 import AppSearchBar from "./components/appbar/Appbar";
 import VehicleList from "./components/vehicles/VehicleList";
+import AddTrack from "./components/vehicles/AddTrack";
+import AddCar from "./components/vehicles/AddCar";
+import CarPage from "./components/vehicles/CarPage";
+import TrackPage from "./components/vehicles/TrackPage";
+import MopedPage from "./components/vehicles/MopedPage";
+import AddMoped from "./components/vehicles/AddMoped";
+import BusPage from "./components/vehicles/BusPage";
+import AddBus from "./components/vehicles/AddBus";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -91,9 +94,36 @@ const routes = createBrowserRouter([
     path: "/vehicles",
     element: <VehicleList />,
     children: [
-      { path: "cars", element: <Cars /> },
-      { path: "tracks", element: <Tracks /> },
-      { path: "mopeds", element: <Mopeds /> },
+      {
+        path: "cars",
+        element: <CarPage />,
+        children: [
+          {
+            path: "addcar",
+            element: <AddCar />,
+          },
+        ],
+      },
+      {
+        path: "buses",
+        element: <BusPage />,
+        children: [
+          {
+            path: "addbus",
+            element: <AddBus />,
+          },
+        ],
+      },
+      {
+        path: "tracks",
+        element: <TrackPage />,
+        children: [{ path: "addtrack", element: <AddTrack /> }],
+      },
+      {
+        path: "mopeds",
+        element: <MopedPage />,
+        children: [{ path: "addmoped", element: <AddMoped /> }],
+      },
     ],
   },
 
