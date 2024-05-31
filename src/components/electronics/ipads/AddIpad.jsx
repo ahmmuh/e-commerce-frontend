@@ -8,7 +8,7 @@ const AddIpad = () => {
   const [selectedValues, setSelectedValues] = useState({
     batteryHealth: [],
     screenSize: [],
-    color: [],
+    colors: [],
     condition: [],
     receipt: [],
     ownershipDuration: [],
@@ -57,9 +57,9 @@ const AddIpad = () => {
 
           <SelectElectronicOption
             label="Färg"
-            value={selectedValues.color}
-            changeHandler={(event) => changeHandler(event, "color")}
-            options={ipadOptionsBasicData.color}
+            value={selectedValues.colors}
+            changeHandler={(event) => changeHandler(event, "colors")}
+            options={ipadOptionsBasicData.colors}
           />
           <SelectElectronicOption
             label="Skick"

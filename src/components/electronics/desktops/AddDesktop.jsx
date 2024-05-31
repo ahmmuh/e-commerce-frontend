@@ -8,7 +8,7 @@ const AddDesktop = () => {
   const [selectedValues, setSelectedValues] = useState({
     batteryHealth: [],
     screenSize: [],
-    color: [],
+    colors: [],
     condition: [],
     receipt: [],
     ownershipDuration: [],
@@ -57,9 +57,9 @@ const AddDesktop = () => {
 
           <SelectElectronicOption
             label="Färg"
-            value={selectedValues.color}
-            changeHandler={(event) => changeHandler(event, "color")}
-            options={desktopOptionsBasicData.color}
+            value={selectedValues.colors}
+            changeHandler={(event) => changeHandler(event, "colors")}
+            options={desktopOptionsBasicData.colors}
           />
           <SelectElectronicOption
             label="Skick"

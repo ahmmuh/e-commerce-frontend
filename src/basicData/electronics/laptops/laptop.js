@@ -1,32 +1,50 @@
 export const laptopOptionsBasicData = {
-    batteryHealth: [
-      { value: "excellent", label: "Utmärkt" },
-      { value: "good", label: "Bra" },
-      { value: "fair", label: "Skälig" },
-      { value: "poor", label: "Dålig" },
-    ],
-    screenSize: [
-      { value: "small", label: "Liten" },
-      { value: "medium", label: "Medium" },
-      { value: "large", label: "Stor" },
-    ],
-    color: [
-      { value: "black", label: "Svart" },
-      { value: "white", label: "Vit" },
-      { value: "gold", label: "Guld" },
-    ],
-    condition: [
-      { value: "new", label: "Ny" },
-      { value: "used", label: "Begagnad" },
-    ],
-    receipt: [
-      { value: "yes", label: "Ja" },
-      { value: "no", label: "Nej" },
-    ],
-    ownershipDuration: [
-      { value: "0-1", label: "0-1 år" },
-      { value: "1-2", label: "1-2 år" },
-      { value: "2+", label: "Mer än 2 år" },
-    ],
-  };
-  
+  batteryHealth: [
+    { value: "excellent", label: "Utmärkt" },
+    { value: "good", label: "Bra" },
+    { value: "fair", label: "Skälig" },
+    { value: "poor", label: "Dålig" },
+  ],
+  screenSize: [
+    { value: "small", label: "Liten" },
+    { value: "medium", label: "Medium" },
+    { value: "large", label: "Stor" },
+  ],
+  colors: [
+    { value: "black", label: "Svart" },
+    { value: "white", label: "Vit" },
+    { value: "gold", label: "Guld" },
+    { value: "yellow", label: "Gul" },
+    { value: "orange", label: "Orange" },
+    { value: "pink", label: "Rosa" },
+    { value: "red", label: "Röd" },
+    { value: "brown", label: "Brun" },
+    { value: "green", label: "Grön" },
+    { value: "blue", label: "Blå" },
+    { value: "purple", label: "Lila" },
+    { value: "grey", label: "Grå" },
+    { value: "multicoloured", label: "Mångfärgad" },
+    { value: "light_brown", label: "Ljusbrun" },
+    { value: "light_green", label: "Ljusgrön" },
+    { value: "light_blue", label: "Ljusblå" },
+    { value: "dark_brown", label: "Mörkbrun" },
+    { value: "dark_green", label: "Mörkgrön" },
+    { value: "dark_blue", label: "Mörkblå" },
+    { value: "bright_red", label: "Klarröd" },
+    { value: "bright_green", label: "Klargrön" },
+    { value: "bright_blue", label: "Klarblå" },
+  ],
+  condition: [
+    { value: "new", label: "Ny" },
+    { value: "used", label: "Begagnad" },
+  ],
+  receipt: [
+    { value: "yes", label: "Ja" },
+    { value: "no", label: "Nej" },
+  ],
+  ownershipDuration: [
+    { value: "0-1", label: "0-1 år" },
+    { value: "1-2", label: "1-2 år" },
+    { value: "2+", label: "Mer än 2 år" },
+  ],
+};

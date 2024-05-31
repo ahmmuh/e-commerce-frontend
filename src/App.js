@@ -3,9 +3,16 @@ import "./App.css";
 import Dashboard from "./components/dashboard/Dashboard";
 import ElectronicList from "./components/electronics/ElectronicList";
 import MobilePage from "./components/electronics/mobiles/MobilePage";
+import SearchAppBar from "./components/appbar/Appbar";
+import AppSearchBar from "./components/appbar/Appbar";
 
-function App() {
-  return <div className="">App</div>;
-}
+const App = () => {
+  return (
+    <div className="">
+      <AppSearchBar />
+      <Dashboard />
+    </div>
+  );
+};
 
 export default App;

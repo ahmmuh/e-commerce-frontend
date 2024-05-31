@@ -7,7 +7,7 @@ const AddLaptop = () => {
   const [selectedValues, setSelectedValues] = useState({
     batteryHealth: [],
     screenSize: [],
-    color: [],
+    colors: [],
     condition: [],
     receipt: [],
     ownershipDuration: [],
@@ -56,9 +56,9 @@ const AddLaptop = () => {
 
           <SelectMobile
             label="Färg"
-            value={selectedValues.color}
-            changeHandler={(event) => changeHandler(event, "color")}
-            options={laptopOptionsBasicData.color}
+            value={selectedValues.colors}
+            changeHandler={(event) => changeHandler(event, "colors")}
+            options={laptopOptionsBasicData.colors}
           />
           <SelectMobile
             label="Skick"

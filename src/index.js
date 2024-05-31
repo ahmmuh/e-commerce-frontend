@@ -33,8 +33,13 @@ import AddDesktop from "./components/electronics/desktops/AddDesktop";
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Dashboard />,
+    element: <App />,
     errorElement: <NotFound />,
+  },
+
+  {
+    path: "/start",
+    element: <Dashboard />,
   },
   {
     path: "/electronics",

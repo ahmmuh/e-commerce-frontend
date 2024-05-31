@@ -9,7 +9,7 @@ const Add = () => {
     name: "",
     batteryHealth: [],
     screenSize: [],
-    color: [],
+    colors: [],
     condition: [],
     receipt: [],
     ownershipDuration: [],
@@ -58,9 +58,9 @@ const Add = () => {
 
           <SelectElectronicOption
             label="Färg"
-            value={selectedValues.color}
-            changeHandler={(event) => changeHandler(event, "color")}
-            options={mobileOptionsBasicData.color}
+            value={selectedValues.colors}
+            changeHandler={(event) => changeHandler(event, "colors")}
+            options={mobileOptionsBasicData.colors}
           />
           <SelectElectronicOption
             label="Skick"
