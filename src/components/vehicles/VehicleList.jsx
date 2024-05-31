@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const VehicleList = () => {
   return (
@@ -16,7 +16,12 @@ const VehicleList = () => {
             aria-controls="home"
             aria-selected="true"
           >
-            <Link to={"buses"}>Bussar</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"buses"}
+            >
+              Bussar
+            </NavLink>
           </button>
         </li>
         <li className="nav-item" role="presentation">
@@ -30,7 +35,12 @@ const VehicleList = () => {
             aria-controls="profile"
             aria-selected="false"
           >
-            <Link to={"tracks"}>Lastbilar</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"tracks"}
+            >
+              Lastbilar
+            </NavLink>
           </button>
         </li>
         <li className="nav-item" role="presentation">
@@ -44,7 +54,12 @@ const VehicleList = () => {
             aria-controls="messages"
             aria-selected="false"
           >
-            <Link to={"cars"}>Personbilar</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"cars"}
+            >
+              Personbilar
+            </NavLink>
           </button>
         </li>
         <li className="nav-item" role="presentation">
@@ -58,7 +73,12 @@ const VehicleList = () => {
             aria-controls="messages"
             aria-selected="false"
           >
-            <Link to={"mopeds"}>Mopeder</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"mopeds"}
+            >
+              Mopeder
+            </NavLink>
           </button>
         </li>
       </ul>

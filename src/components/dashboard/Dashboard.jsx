@@ -16,8 +16,8 @@ const Dashboard = () => {
             <Link className="links" to={"/electronics"}>
               Electronics
             </Link>
-            <Link className="links" to={"/houses"}>
-              Electronics
+            <Link className="links" to={"/vehicles"}>
+              Fordon
             </Link>
             <Link className="links" to={"/clothes"}>
               Clothes

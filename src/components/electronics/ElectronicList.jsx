@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import MobilePage from "./mobiles/MobilePage";
 
 const ElectronicList = () => {
@@ -17,7 +17,12 @@ const ElectronicList = () => {
             aria-controls="home"
             aria-selected="true"
           >
-            <Link to={"mobiles"}>Mobiles</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"mobiles"}
+            >
+              Mobiles
+            </NavLink>
           </button>
         </li>
         <li className="nav-item" role="presentation">
@@ -31,7 +36,12 @@ const ElectronicList = () => {
             aria-controls="profile"
             aria-selected="false"
           >
-            <Link to={"laptops"}>Laptops</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"laptops"}
+            >
+              Laptops
+            </NavLink>
           </button>
         </li>
         <li className="nav-item" role="presentation">
@@ -45,7 +55,12 @@ const ElectronicList = () => {
             aria-controls="messages"
             aria-selected="false"
           >
-            <Link to={"ipads"}>Ipad</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"ipads"}
+            >
+              Ipad
+            </NavLink>
           </button>
         </li>
         <li className="nav-item" role="presentation">
@@ -59,7 +74,12 @@ const ElectronicList = () => {
             aria-controls="messages"
             aria-selected="false"
           >
-            <Link to={"desktops"}>Desktops</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={"desktops"}
+            >
+              Desktops
+            </NavLink>
           </button>
         </li>
       </ul>
