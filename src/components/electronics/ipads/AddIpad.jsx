@@ -1,12 +1,11 @@
 import React, { useState } from "react";
+import { ipadOptionsBasicData } from "../../../basicData/electronics/ipdas/ipad";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import SelectElectronicOption from "../../../reuseableComponents/forms/SelectElectronicOption";
 import { Box, Button, TextField } from "@mui/material";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import { mobileOptionsBasicData } from "../../../basicData/electronics/mobiles/mobile";
-
-const Add = () => {
+import TabletMacIcon from "@mui/icons-material/TabletMac";
+const AddIpad = () => {
   const [selectedValues, setSelectedValues] = useState({
-    name: "",
     batteryHealth: [],
     screenSize: [],
     color: [],
@@ -31,7 +30,7 @@ const Add = () => {
   return (
     <div className="container mt-2">
       <h3 className="lead">
-        Sälj telefon <PhoneIphoneIcon />
+        Sälj Ipad <TabletMacIcon />
       </h3>
       <div className="row">
         <form>
@@ -47,40 +46,40 @@ const Add = () => {
             label="Batterihälsa"
             value={selectedValues.batteryHealth}
             changeHandler={(event) => changeHandler(event, "batteryHealth")}
-            options={mobileOptionsBasicData.batteryHealth}
+            options={ipadOptionsBasicData.batteryHealth}
           />
           <SelectElectronicOption
             label="Skärmstorlek"
             value={selectedValues.screenSize}
             changeHandler={(event) => changeHandler(event, "screenSize")}
-            options={mobileOptionsBasicData.screenSize}
+            options={ipadOptionsBasicData.screenSize}
           />
 
           <SelectElectronicOption
             label="Färg"
             value={selectedValues.color}
             changeHandler={(event) => changeHandler(event, "color")}
-            options={mobileOptionsBasicData.color}
+            options={ipadOptionsBasicData.color}
           />
           <SelectElectronicOption
             label="Skick"
             value={selectedValues.condition}
             changeHandler={(event) => changeHandler(event, "condition")}
-            options={mobileOptionsBasicData.condition}
+            options={ipadOptionsBasicData.condition}
           />
 
           <SelectElectronicOption
             label="Kvitto"
             value={selectedValues.receipt}
             changeHandler={(event) => changeHandler(event, "receipt")}
-            options={mobileOptionsBasicData.receipt}
+            options={ipadOptionsBasicData.receipt}
           />
 
           <SelectElectronicOption
             label="Ägtid"
             value={selectedValues.ownershipDuration}
             changeHandler={(event) => changeHandler(event, "ownershipDuration")}
-            options={mobileOptionsBasicData.ownershipDuration}
+            options={ipadOptionsBasicData.ownershipDuration}
           />
 
           <Button
@@ -97,4 +96,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default AddIpad;

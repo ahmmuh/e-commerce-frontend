@@ -1,15 +1,15 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
-const MobilePage = () => {
+const DesktopPage = () => {
   return (
     <div classNameName="container">
       <nav className="nav justify-content-center  ">
-        <Link to={"addmobile"} className="nav-link active">
+        <Link to={"adddesktop"} className="nav-link active">
           Add
         </Link>
         <Link to="/" className="nav-link ">
-          Mobile list
+          Desktops
         </Link>
       </nav>
       <Outlet />
@@ -17,4 +17,4 @@ const MobilePage = () => {
   );
 };
 
-export default MobilePage;
+export default DesktopPage;

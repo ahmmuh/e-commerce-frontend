@@ -1,4 +1,4 @@
-export const options = {
+export const ipadOptionsBasicData = {
   batteryHealth: [
     { value: "excellent", label: "Utmärkt" },
     { value: "good", label: "Bra" },
@@ -19,10 +19,16 @@ export const options = {
     { value: "new", label: "Ny" },
     { value: "used", label: "Begagnad" },
   ],
+  WiFi: [
+    { value: "yes", label: "Ja" },
+    { value: "no", label: "Nej" },
+  ],
+  storageCapacity: [64, 128, 256, 512, 1024, 2048],
   receipt: [
     { value: "yes", label: "Ja" },
     { value: "no", label: "Nej" },
   ],
+  RAM: [3, 4, 8, 16],
   ownershipDuration: [
     { value: "0-1", label: "0-1 år" },
     { value: "1-2", label: "1-2 år" },

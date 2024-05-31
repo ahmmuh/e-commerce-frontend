@@ -10,7 +10,6 @@ import {
 import MobilePage from "./components/electronics/mobiles/MobilePage";
 import NotFound from "./components/error/NotFound";
 import ElectronicList from "./components/electronics/ElectronicList";
-// import IpadPage from "./components/electronics/ipads/IpadPage";
 import Clothes from "./components/clothes/Clothes";
 import LaptopPage from "./components/electronics/laptops/LaptopPage";
 import Vehicles from "./components/vehicles/Vehicles";
@@ -25,6 +24,12 @@ import Boys from "./components/clothes/children/Boys";
 import Men from "./components/clothes/Men";
 import Dashboard from "./components/dashboard/Dashboard";
 import Add from "./components/electronics/mobiles/Add";
+import IpadPage from "./components/electronics/ipads/IpadPage";
+import AddIpad from "./components/electronics/ipads/AddIpad";
+import AddLaptop from "./components/electronics/laptops/AddLaptop";
+import DesktopPage from "./components/electronics/desktops/DesktopPage";
+import { chipClasses } from "@mui/material";
+import AddDesktop from "./components/electronics/desktops/AddDesktop";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -38,15 +43,39 @@ const routes = createBrowserRouter([
       {
         path: "mobiles",
         element: <MobilePage />,
-        children: [{ path: "add", element: <Add /> }],
+        children: [{ path: "addmobile", element: <Add /> }],
       },
       {
         path: "laptops",
         element: <LaptopPage />,
+        children: [
+          {
+            path: "addlaptop",
+            element: <AddLaptop />,
+          },
+        ],
       },
-      //   { path: "ipads",
-      //   element: <IpadPage />
-      //  },
+
+      {
+        path: "desktops",
+        element: <DesktopPage />,
+        children: [
+          {
+            path: "adddesktop",
+            element: <AddDesktop />,
+          },
+        ],
+      },
+      {
+        path: "ipads",
+        element: <IpadPage />,
+        children: [
+          {
+            path: "addipad",
+            element: <AddIpad />,
+          },
+        ],
+      },
     ],
   },
 

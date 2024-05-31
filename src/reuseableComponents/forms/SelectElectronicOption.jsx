@@ -7,7 +7,12 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const SelectMobile = ({ label, options, changeHandler, ...props }) => {
+const SelectElectronicOption = ({
+  label,
+  options,
+  changeHandler,
+  ...props
+}) => {
   console.log("Props från dashboard för mobiler", options);
   return (
     <div className="container">
@@ -36,4 +41,4 @@ const SelectMobile = ({ label, options, changeHandler, ...props }) => {
   );
 };
 
-export default SelectMobile;
+export default SelectElectronicOption;

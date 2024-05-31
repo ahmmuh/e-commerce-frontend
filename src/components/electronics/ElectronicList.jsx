@@ -48,6 +48,20 @@ const ElectronicList = () => {
             <Link to={"ipads"}>Ipad</Link>
           </button>
         </li>
+        <li className="nav-item" role="presentation">
+          <button
+            className="nav-link"
+            id="messages-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#messages"
+            type="button"
+            role="tab"
+            aria-controls="messages"
+            aria-selected="false"
+          >
+            <Link to={"desktops"}>Desktops</Link>
+          </button>
+        </li>
       </ul>
       <Outlet />
     </div>

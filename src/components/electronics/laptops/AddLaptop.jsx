@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import SelectElectronicOption from "../../../reuseableComponents/forms/SelectElectronicOption";
+import { laptopOptionsBasicData } from "../../../basicData/electronics/laptops/laptop";
 import { Box, Button, TextField } from "@mui/material";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import { mobileOptionsBasicData } from "../../../basicData/electronics/mobiles/mobile";
-
-const Add = () => {
+import SelectMobile from "../../../reuseableComponents/forms/SelectElectronicOption";
+import LaptopIcon from "@mui/icons-material/Laptop";
+const AddLaptop = () => {
   const [selectedValues, setSelectedValues] = useState({
-    name: "",
     batteryHealth: [],
     screenSize: [],
     color: [],
@@ -31,7 +29,7 @@ const Add = () => {
   return (
     <div className="container mt-2">
       <h3 className="lead">
-        Sälj telefon <PhoneIphoneIcon />
+        Sälj Laptop <LaptopIcon />
       </h3>
       <div className="row">
         <form>
@@ -43,44 +41,44 @@ const Add = () => {
               variant="standard"
             />
           </Box>
-          <SelectElectronicOption
+          <SelectMobile
             label="Batterihälsa"
             value={selectedValues.batteryHealth}
             changeHandler={(event) => changeHandler(event, "batteryHealth")}
-            options={mobileOptionsBasicData.batteryHealth}
+            options={laptopOptionsBasicData.batteryHealth}
           />
-          <SelectElectronicOption
+          <SelectMobile
             label="Skärmstorlek"
             value={selectedValues.screenSize}
             changeHandler={(event) => changeHandler(event, "screenSize")}
-            options={mobileOptionsBasicData.screenSize}
+            options={laptopOptionsBasicData.screenSize}
           />
 
-          <SelectElectronicOption
+          <SelectMobile
             label="Färg"
             value={selectedValues.color}
             changeHandler={(event) => changeHandler(event, "color")}
-            options={mobileOptionsBasicData.color}
+            options={laptopOptionsBasicData.color}
           />
-          <SelectElectronicOption
+          <SelectMobile
             label="Skick"
             value={selectedValues.condition}
             changeHandler={(event) => changeHandler(event, "condition")}
-            options={mobileOptionsBasicData.condition}
+            options={laptopOptionsBasicData.condition}
           />
 
-          <SelectElectronicOption
+          <SelectMobile
             label="Kvitto"
             value={selectedValues.receipt}
             changeHandler={(event) => changeHandler(event, "receipt")}
-            options={mobileOptionsBasicData.receipt}
+            options={laptopOptionsBasicData.receipt}
           />
 
-          <SelectElectronicOption
+          <SelectMobile
             label="Ägtid"
             value={selectedValues.ownershipDuration}
             changeHandler={(event) => changeHandler(event, "ownershipDuration")}
-            options={mobileOptionsBasicData.ownershipDuration}
+            options={laptopOptionsBasicData.ownershipDuration}
           />
 
           <Button
@@ -97,4 +95,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default AddLaptop;
