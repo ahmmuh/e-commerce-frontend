@@ -5,7 +5,7 @@ import MobilePage from "./mobiles/MobilePage";
 const ElectronicList = () => {
   return (
     <div className="container">
-      <ul className="nav nav-tabs" id="myTab" role="tablist">
+      <ul className="nav nav-tabs " id="myTab" role="tablist">
         <li className="nav-item" role="presentation">
           <button
             className="nav-link active"

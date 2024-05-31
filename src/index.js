@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import {
+  BrowserRouter,
   BrowserRouter as Router,
   RouterProvider,
   createBrowserRouter,
@@ -12,7 +13,7 @@ import NotFound from "./components/error/NotFound";
 import ElectronicList from "./components/electronics/ElectronicList";
 import Clothes from "./components/clothes/Clothes";
 import LaptopPage from "./components/electronics/laptops/LaptopPage";
-import Vehicles from "./components/vehicles/Vehicles";
+import Vehicles from "./components/vehicles/VehicleList";
 import Cars from "./components/vehicles/Cars";
 import Tracks from "./components/vehicles/Tracks";
 import Mopeds from "./components/vehicles/Mopeds";
@@ -30,6 +31,8 @@ import AddLaptop from "./components/electronics/laptops/AddLaptop";
 import DesktopPage from "./components/electronics/desktops/DesktopPage";
 import { chipClasses } from "@mui/material";
 import AddDesktop from "./components/electronics/desktops/AddDesktop";
+import AppSearchBar from "./components/appbar/Appbar";
+import VehicleList from "./components/vehicles/VehicleList";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -86,7 +89,7 @@ const routes = createBrowserRouter([
 
   {
     path: "/vehicles",
-    element: <Vehicles />,
+    element: <VehicleList />,
     children: [
       { path: "cars", element: <Cars /> },
       { path: "tracks", element: <Tracks /> },
@@ -121,6 +124,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
+    <AppSearchBar />
     <RouterProvider router={routes}>
       <App />
     </RouterProvider>

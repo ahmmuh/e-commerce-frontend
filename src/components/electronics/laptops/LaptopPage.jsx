@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 const LaptopPage = () => {
   return (
     <div classNameName="container">
-      <nav className="nav justify-content-center  ">
+      <nav className="nav justify-content-center ">
         <Link to={"addlaptop"} className="nav-link active">
           Add
         </Link>

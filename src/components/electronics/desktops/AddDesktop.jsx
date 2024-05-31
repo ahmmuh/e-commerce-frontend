@@ -7,6 +7,7 @@ import { Box, Button, TextField } from "@mui/material";
 const AddDesktop = () => {
   const [selectedValues, setSelectedValues] = useState({
     batteryHealth: [],
+    name: "",
     screenSize: [],
     colors: [],
     condition: [],

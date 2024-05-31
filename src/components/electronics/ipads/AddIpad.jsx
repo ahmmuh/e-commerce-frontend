@@ -6,6 +6,7 @@ import { Box, Button, TextField } from "@mui/material";
 import TabletMacIcon from "@mui/icons-material/TabletMac";
 const AddIpad = () => {
   const [selectedValues, setSelectedValues] = useState({
+    name: "",
     batteryHealth: [],
     screenSize: [],
     colors: [],
@@ -39,6 +40,7 @@ const AddIpad = () => {
               fullWidth
               id="standard-basic"
               label="Name"
+              value={selectedValues.name}
               variant="standard"
             />
           </Box>

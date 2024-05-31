@@ -5,6 +5,7 @@ import SelectMobile from "../../../reuseableComponents/forms/SelectElectronicOpt
 import LaptopIcon from "@mui/icons-material/Laptop";
 const AddLaptop = () => {
   const [selectedValues, setSelectedValues] = useState({
+    name: "",
     batteryHealth: [],
     screenSize: [],
     colors: [],
@@ -37,8 +38,11 @@ const AddLaptop = () => {
             <TextField
               fullWidth
               id="standard-basic"
+              name="name"
               label="Name"
+              value={selectedValues.name}
               variant="standard"
+              onChange={(event) => changeHandler(event, "name")}
             />
           </Box>
           <SelectMobile

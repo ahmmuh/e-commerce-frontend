@@ -41,6 +41,8 @@ const Add = () => {
               id="standard-basic"
               label="Name"
               variant="standard"
+              value={selectedValues.name}
+              onChange={(event) => changeHandler(event, "name")}
             />
           </Box>
           <SelectElectronicOption

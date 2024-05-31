@@ -4,6 +4,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Typography,
 } from "@mui/material";
 import React from "react";
 
@@ -17,7 +18,6 @@ const SelectElectronicOption = ({
   return (
     <div className="container">
       <FormControl fullWidth variant="standard">
-        {/* <InputLabel>{label}</InputLabel> */}
         <InputLabel htmlFor={label}>{label}</InputLabel>
 
         <Select {...props} onChange={changeHandler} sx={{ mb: "1rem" }}>
