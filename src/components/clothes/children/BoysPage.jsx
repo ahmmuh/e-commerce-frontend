@@ -1,15 +1,15 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
-const CarPage = () => {
+const BoysPage = () => {
   return (
     <div classNameName="container">
       <nav className="nav justify-content-center  ">
-        <Link to={"addcar"} className="nav-link active">
+        <Link to={"addboy"} className="nav-link active">
           Add
         </Link>
         <Link to="/" className="nav-link ">
-          Personbilar
+          Pojkar
         </Link>
       </nav>
       <Outlet />
@@ -17,4 +17,4 @@ const CarPage = () => {
   );
 };
 
-export default CarPage;
+export default BoysPage;

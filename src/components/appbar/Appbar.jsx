@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -70,8 +70,9 @@ export default function AppSearchBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            {/* <Link to="/">E-commerce</Link> */}
-            E-commerce
+            <a href="/" className="nav-link">
+              E-commerce
+            </a>
           </Typography>
           <Search>
             <SearchIconWrapper>
