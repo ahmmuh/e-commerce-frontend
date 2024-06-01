@@ -4,9 +4,8 @@ export const carAttributes = {
     { value: "automatic", label: "Automat" },
   ],
   drive: [
-    { value: "rear_wheel", label: "Bakhjulsdrift" },
-    { value: "front_wheel", label: "Framhjulsdrift" },
-    { value: "four_wheel", label: "Fyrhjulsdrift" },
+    { value: "rtwo_wheel", label: "Tvåhjulsdriven" },
+    { value: "four_wheel", label: "Fyrahjulsdriven" },
   ],
 
   marken: [
@@ -50,7 +49,7 @@ export const carAttributes = {
     { value: "2025", label: "2025" },
   ],
 
-  pris: [
+  priser: [
     { value: "5000", label: "5 000 kr" },
     { value: "10000", label: "10 000 kr" },
     { value: "15000", label: "15 000 kr" },
@@ -75,6 +74,7 @@ export const carAttributes = {
     { value: "petrol", label: "Bensin" },
     { value: "biogas", label: "Biogas" },
     { value: "ethanol", label: "Etanol" },
+    { value: "diesel", label: "Diesel" },
     { value: "el", label: "El" },
   ],
   bodyType: [

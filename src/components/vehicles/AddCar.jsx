@@ -5,13 +5,17 @@ import { carAttributes } from "../../basicData/vehicles/carAttributes";
 
 const AddCar = () => {
   const [selectedValues, setSelectedValues] = useState({
-    batteryHealth: [],
-    name: "",
-    screenSize: [],
-    colors: [],
-    condition: [],
+    transmission: [],
+    drive: [],
+    bodyType: [],
+    seats: [],
     receipt: [],
-    ownershipDuration: [],
+    colors: [],
+    miltal: [],
+    priser: [],
+    marken: [],
+    drivmedel: [],
+    modellAr: [],
   });
   const [selectItem, setSelectItem] = useState([]);
   const [displaySelectedItem, setSelectedDisplayItem] = useState(false);
@@ -40,17 +44,51 @@ const AddCar = () => {
               variant="standard"
             />
           </Box>
+
           <SelectElectronicOption
-            label="Batterihälsa"
-            value={selectedValues.batteryHealth}
-            changeHandler={(event) => changeHandler(event, "batteryHealth")}
-            options={carAttributes.batteryHealth}
+            label="Modellår"
+            value={selectedValues.modellAr}
+            changeHandler={(event) => changeHandler(event, "modellAr")}
+            options={carAttributes.modellAr}
           />
           <SelectElectronicOption
-            label="Skärmstorlek"
-            value={selectedValues.screenSize}
-            changeHandler={(event) => changeHandler(event, "screenSize")}
-            options={carAttributes.screenSize}
+            label="Miltal"
+            value={selectedValues.miltal}
+            changeHandler={(event) => changeHandler(event, "miltal")}
+            options={carAttributes.miltal}
+          />
+
+          <SelectElectronicOption
+            label="Pris"
+            value={selectedValues.priser}
+            changeHandler={(event) => changeHandler(event, "priser")}
+            options={carAttributes.priser}
+          />
+          <SelectElectronicOption
+            label="Bränsle"
+            value={selectedValues.drivmedel}
+            changeHandler={(event) => changeHandler(event, "drivmedel")}
+            options={carAttributes.drivmedel}
+          />
+          <SelectElectronicOption
+            label="Växellåda"
+            value={selectedValues.batteryHealth}
+            changeHandler={(event) => changeHandler(event, "transmission")}
+            options={carAttributes.transmission}
+          />
+
+          <SelectElectronicOption
+            label="Märke"
+            value={selectedValues.marken}
+            changeHandler={(event) => changeHandler(event, "marken")}
+            options={carAttributes.marken}
+          />
+
+          <SelectElectronicOption
+            label="Drivning"
+            value={selectedValues.drive}
+            changeHandler={(event) => changeHandler(event, "drive")}
+            options={carAttributes.drive}
           />
 
           <SelectElectronicOption
@@ -71,13 +109,6 @@ const AddCar = () => {
             value={selectedValues.receipt}
             changeHandler={(event) => changeHandler(event, "receipt")}
             options={carAttributes.receipt}
-          />
-
-          <SelectElectronicOption
-            label="Ägtid"
-            value={selectedValues.ownershipDuration}
-            changeHandler={(event) => changeHandler(event, "ownershipDuration")}
-            options={carAttributes.ownershipDuration}
           />
 
           <Button
