@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { carAttributes } from "../../basicData/vehicles/carAttributes";
-import { Box, Button, TextField } from "@mui/material";
 import SelectVehicleOptions from "../../reuseableComponents/forms/SelectVehicleOptions";
+import { Box, Button, TextField } from "@mui/material";
+import { carAttributes } from "../../basicData/vehicles/carAttributes";
 
-const AddTrack = () => {
+const AddMotorCycle = () => {
   const [selectedValues, setSelectedValues] = useState({
     transmission: [],
     drive: [],
@@ -17,7 +17,6 @@ const AddTrack = () => {
     drivmedel: [],
     modellAr: [],
   });
-
   const [selectItem, setSelectItem] = useState([]);
   const [displaySelectedItem, setSelectedDisplayItem] = useState(false);
   const changeHandler = (e, category) => {
@@ -126,4 +125,4 @@ const AddTrack = () => {
   );
 };
 
-export default AddTrack;
+export default AddMotorCycle;

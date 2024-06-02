@@ -1,19 +1,20 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
-const MopedPage = () => {
+const BookPage = () => {
   return (
     <div classNameName="container">
       <nav className="nav justify-content-center  ">
-        <Link to={"addmoped"} className="nav-link active">
+        <Link to={"addbook"} className="nav-link active">
           Add
         </Link>
         <Link to="/" className="nav-link ">
-          Moped lista
+          Böcker
         </Link>
       </nav>
       <Outlet />
     </div>
   );
 };
-export default MopedPage;
+
+export default BookPage;

@@ -1,8 +1,7 @@
-import { Breadcrumbs, Typography } from "@mui/material";
 import React from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
-const VehicleList = () => {
+const HouseRentList = () => {
   return (
     <div className="container">
       <ul className="nav nav-tabs " id="myTab" role="tablist">
@@ -19,9 +18,9 @@ const VehicleList = () => {
           >
             <NavLink
               className={({ isActive }) => (isActive ? "active" : "")}
-              to={"buses"}
+              to={"appartmentrent"}
             >
-              Bussar
+              Lägenheter
             </NavLink>
           </button>
         </li>
@@ -38,28 +37,9 @@ const VehicleList = () => {
           >
             <NavLink
               className={({ isActive }) => (isActive ? "active" : "")}
-              to={"tracks"}
+              to={"villarent"}
             >
-              Lastbilar
-            </NavLink>
-          </button>
-        </li>
-        <li className="nav-item" role="presentation">
-          <button
-            className="nav-link"
-            id="messages-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#messages"
-            type="button"
-            role="tab"
-            aria-controls="messages"
-            aria-selected="false"
-          >
-            <NavLink
-              className={({ isActive }) => (isActive ? "active" : "")}
-              to={"cars"}
-            >
-              Personbilar
+              Villor
             </NavLink>
           </button>
         </li>
@@ -67,38 +47,38 @@ const VehicleList = () => {
         <li className="nav-item" role="presentation">
           <button
             className="nav-link"
-            id="messages-tab"
+            id="profile-tab"
             data-bs-toggle="tab"
-            data-bs-target="#messages"
+            data-bs-target="#profile"
             type="button"
             role="tab"
-            aria-controls="messages"
+            aria-controls="profile"
             aria-selected="false"
           >
             <NavLink
               className={({ isActive }) => (isActive ? "active" : "")}
-              to={"motorcycles"}
+              to={"houserent"}
             >
-              MC
+              Hus
             </NavLink>
           </button>
         </li>
         <li className="nav-item" role="presentation">
           <button
             className="nav-link"
-            id="messages-tab"
+            id="profile-tab"
             data-bs-toggle="tab"
-            data-bs-target="#messages"
+            data-bs-target="#profile"
             type="button"
             role="tab"
-            aria-controls="messages"
+            aria-controls="profile"
             aria-selected="false"
           >
             <NavLink
               className={({ isActive }) => (isActive ? "active" : "")}
-              to={"mopeds"}
+              to={"addrenthouse"}
             >
-              Mopeder
+              Add house
             </NavLink>
           </button>
         </li>
@@ -108,4 +88,4 @@ const VehicleList = () => {
   );
 };
 
-export default VehicleList;
+export default HouseRentList;

@@ -14,19 +14,19 @@ const Dashboard = () => {
               Start
             </Link>
             <Link className="links" to={"/electronics"}>
-              Electronics
+              Elektronik
             </Link>
             <Link className="links" to={"/vehicles"}>
               Fordon
             </Link>
+            <Link className="links" to={"/houses"}>
+              Bostad
+            </Link>
             <Link className="links" to={"/clothes"}>
-              Clothes
+              Kläder
             </Link>
-            <Link className="links" to={"/vehicles"}>
-              Vehicles
-            </Link>
-            <Link className="links" to={"/electronics"}>
-              Electronics
+            <Link className="links" to={"/hobbies"}>
+              Hobby & Fritid
             </Link>
             <Link className="links" to={"/electronics"}>
               Electronics

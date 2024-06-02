@@ -8,7 +8,7 @@ import AppSearchBar from "./components/appbar/Appbar";
 
 const App = () => {
   return (
-    <div className="">
+    <div className="py-3">
       <Dashboard />
     </div>
   );
