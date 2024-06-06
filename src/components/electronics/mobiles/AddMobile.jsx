@@ -4,7 +4,7 @@ import { Box, Button, TextField } from "@mui/material";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import { mobileOptionsBasicData } from "../../../basicData/electronics/mobiles/mobile";
 
-const Add = () => {
+const AddMobile = () => {
   const [selectedValues, setSelectedValues] = useState({
     name: "",
     batteryHealth: [],
@@ -99,4 +99,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default AddMobile;

@@ -16,11 +16,8 @@ import LaptopPage from "./components/electronics/laptops/LaptopPage";
 import Adults from "./components/clothes/adults/Adults";
 import Women from "./components/clothes/adults/Women";
 import ChildrenList from "./components/clothes/children/ChildrenList";
-import Girls from "./components/clothes/children/GirlsPage";
-import Boys from "./components/clothes/children/BoysPage";
 import Men from "./components/clothes/Men";
 import Dashboard from "./components/dashboard/Dashboard";
-import Add from "./components/electronics/mobiles/Add";
 import IpadPage from "./components/electronics/ipads/IpadPage";
 import AddIpad from "./components/electronics/ipads/AddIpad";
 import AddLaptop from "./components/electronics/laptops/AddLaptop";
@@ -38,11 +35,11 @@ import BusPage from "./components/vehicles/BusPage";
 import AddBus from "./components/vehicles/AddBus";
 import AddMotorCycle from "./components/vehicles/AddMotorCycle";
 import MotorCyclePage from "./components/vehicles/MotorCyclePage";
-import HobbyList from "./components/hobies/HobbyList";
-import BoatPage from "./components/hobies/boats/BoatPage";
-import BookPage from "./components/hobies/books/BookPage";
-import AddBook from "./components/hobies/books/AddBook";
-import AddBoat from "./components/hobies/boats/AddBoat";
+import HobbyList from "./components/hobbies/HobbyList";
+import BoatPage from "./components/hobbies/boats/BoatPage";
+import BookPage from "./components/hobbies/books/BookPage";
+import AddBook from "./components/hobbies/books/AddBook";
+import AddBoat from "./components/hobbies/boats/AddBoat";
 import HouseList from "./components/houses/HouseList";
 import VillaPage from "./components/houses/sell/VillaSellPage";
 import AllHouses from "./components/houses/AllHouses";
@@ -55,6 +52,12 @@ import HouseSellPage from "./components/houses/sell/HusSellPage";
 import VillaSellPage from "./components/houses/sell/VillaSellPage";
 import AddRentHouse from "./components/houses/rent/AddRentHouse";
 import HouseRentList from "./components/houses/rent/HouseRentList";
+import AddMobile from "./components/electronics/mobiles/AddMobile";
+import GirlsPage from "./components/clothes/children/girls/GirlsPage";
+import BoysPage from "./components/clothes/children/boys/BoysPage";
+import AddGirl from "./components/clothes/children/girls/AddGirl";
+import AddBoy from "./components/clothes/children/boys/AddBoy";
+import HouseSellList from "./components/houses/sell/HouseSellList";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -65,7 +68,81 @@ const routes = createBrowserRouter([
     path: "/start",
     element: <Dashboard />,
   },
+
+  {
+    path: "hobbies",
+    element: <HobbyList />,
+    children: [
+      {
+        path: "books",
+        element: <BookPage />,
+        children: [
+          {
+            path: "addbook",
+            element: <AddBook />,
+          },
+        ],
+      },
+      {
+        path: "boats",
+        element: <BoatPage />,
+        children: [
+          {
+            path: "addboat",
+            element: <AddBoat />,
+          },
+        ],
+      },
+    ],
+  },
+
   // ... andra rutter ...
+  {
+    path: "electronics",
+    element: <ElectronicList />,
+    children: [
+      {
+        path: "laptops",
+        element: <LaptopPage />,
+        children: [
+          {
+            path: "addlaptop",
+            element: <AddLaptop />,
+          },
+        ],
+      },
+      {
+        path: "mobiles",
+        element: <MobilePage />,
+        children: [
+          {
+            path: "addmobile",
+            element: <AddMobile />,
+          },
+        ],
+      },
+      {
+        path: "ipads",
+        element: <IpadPage />,
+        children: [
+          {
+            path: "addipad",
+            element: <AddIpad />,
+          },
+        ],
+      },
+      {
+        path: "desktops",
+        element: <DesktopPage />,
+        children: [
+          {
+            path: "adddesktop",
+            element: <AddDesktop />,
+          },
+        ],
+      },
+    ],
+  },
   {
     path: "/houses",
     element: <AllHouses />,
@@ -94,10 +171,10 @@ const routes = createBrowserRouter([
       },
       {
         path: "sells",
-        element: <AppartmentSellPage />,
+        element: <HouseSellList />,
         children: [
           {
-            path: "add",
+            path: "addsellhouse",
             element: <AddSellHouse />,
           },
           {
@@ -117,6 +194,107 @@ const routes = createBrowserRouter([
     ],
   },
   // ... andra rutter ...
+
+  {
+    path: "/vehicles",
+    element: <VehicleList />,
+
+    children: [
+      {
+        path: "cars",
+        element: <CarPage />,
+        children: [
+          {
+            path: "addcar",
+            element: <AddCar />,
+          },
+        ],
+      },
+
+      {
+        path: "buses",
+        element: <BusPage />,
+        children: [
+          {
+            path: "addbus",
+            element: <AddBus />,
+          },
+        ],
+      },
+      {
+        path: "tracks",
+        element: <TrackPage />,
+        children: [
+          {
+            path: "addtrack",
+            element: <AddTrack />,
+          },
+        ],
+      },
+      {
+        path: "mopeds",
+        element: <MopedPage />,
+        children: [
+          {
+            path: "addmoped",
+            element: <AddMoped />,
+          },
+        ],
+      },
+      {
+        path: "motorcycles",
+        element: <MotorCyclePage />,
+        children: [
+          {
+            path: "addmotorcycle",
+            element: <AddMotorCycle />,
+          },
+        ],
+      },
+      // {
+      //   path: "tracks",
+      //   element: <TrackPage />,
+      //   children: [
+      //     {
+      //       path: "addtrack",
+      //       element: <AddTrack />,
+      //     },
+      //   ],
+      // },
+    ],
+  },
+  {
+    path: "clothes",
+    element: <Clothes />,
+    children: [
+      {
+        path: "adults",
+        element: <Adults />,
+      },
+
+      {
+        path: "children",
+        element: <ChildrenList />,
+        children: [
+          {
+            path: "boys",
+            element: <BoysPage />,
+            children: [
+              {
+                path: "addboy",
+                element: <AddBoy />,
+              },
+            ],
+          },
+          {
+            path: "girls",
+            element: <GirlsPage />,
+            children: [{ path: "addgirl", element: <AddGirl /> }],
+          },
+        ],
+      },
+    ],
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
