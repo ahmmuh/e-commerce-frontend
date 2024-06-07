@@ -2,80 +2,18 @@ import MainInput from "../../reuseableComponents/forms/MainInput";
 import { Link, Outlet } from "react-router-dom";
 import DCard from "../../reuseableComponents/dashboardCars/DCard";
 import React, { useState } from "react";
+import { Computer, Home, House } from "@mui/icons-material";
+import LeftSidebar from "./LeftSidebar";
+import { Box } from "@mui/material";
 
 const Dashboard = () => {
   return (
-    <section className="container-fluid p-4">
+    <section className="container-fluid">
       <div className="row">
-        <div className="col-4 sidebar">
-          <h4>Category</h4>
-          <div className="d-flex flex-column">
-            <Link className="links" to={"/"}>
-              Start
-            </Link>
-            <Link className="links" to={"/electronics"}>
-              Elektronik
-            </Link>
-            <Link className="links" to={"/vehicles"}>
-              Fordon
-            </Link>
-            <Link className="links" to={"/houses"}>
-              Bostad
-            </Link>
-            <Link className="links" to={"/clothes"}>
-              Kläder
-            </Link>
-            <Link className="links" to={"/hobbies"}>
-              Hobby & Fritid
-            </Link>
-            <Link className="links" to={"/electronics"}>
-              Electronics
-            </Link>
-          </div>
+        <div className="col sidebar-left">
+          <LeftSidebar />
         </div>
-        <div className="col">
-          <div className="d-flex">
-            <DCard
-              title={"Total sales"}
-              total={12000}
-              style={{
-                backgroundColor: "#754f12",
-                boxShadow: "1px 1px 1px 1px #d65",
-                padding: "1rem",
-              }}
-            />
-
-            <DCard
-              title={"User"}
-              total={43000}
-              style={{
-                backgroundColor: "#884f12",
-                boxShadow: "1px 1px 1px 1px #e95833",
-                padding: "1rem",
-              }}
-            />
-            <DCard
-              title={"User"}
-              total={43000}
-              style={{
-                backgroundColor: "#ff4f12",
-                boxShadow: "1px 1px 1px 1px #e95833",
-                padding: "1rem",
-              }}
-            />
-
-            <DCard
-              title={"User"}
-              total={43000}
-              style={{
-                backgroundColor: "#ff4f12",
-                boxShadow: "1px 1px 1px 1px #e95833",
-                padding: "1rem",
-              }}
-            />
-          </div>
-          <Outlet />
-        </div>
+        <div className="col-9">Content</div>
       </div>
     </section>
   );

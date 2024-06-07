@@ -43,7 +43,7 @@ const AddRentHouse = () => {
   return (
     <div className="container mt-2">
       <h3 className="lead">
-        Sälj/hyr bostad <Home />{" "}
+        Hyr ut bostad <Home />{" "}
       </h3>
       <div className="row">
         <form>

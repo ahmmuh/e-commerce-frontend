@@ -14,9 +14,9 @@ import ElectronicList from "./components/electronics/ElectronicList";
 import Clothes from "./components/clothes/Clothes";
 import LaptopPage from "./components/electronics/laptops/LaptopPage";
 import Adults from "./components/clothes/adults/Adults";
-import Women from "./components/clothes/adults/Women";
+import Women from "./components/clothes/adults/WomenPage";
 import ChildrenList from "./components/clothes/children/ChildrenList";
-import Men from "./components/clothes/Men";
+import Men from "./components/clothes/adults/MenPage";
 import Dashboard from "./components/dashboard/Dashboard";
 import IpadPage from "./components/electronics/ipads/IpadPage";
 import AddIpad from "./components/electronics/ipads/AddIpad";
@@ -58,6 +58,10 @@ import BoysPage from "./components/clothes/children/boys/BoysPage";
 import AddGirl from "./components/clothes/children/girls/AddGirl";
 import AddBoy from "./components/clothes/children/boys/AddBoy";
 import HouseSellList from "./components/houses/sell/HouseSellList";
+import MenPage from "./components/clothes/adults/MenPage";
+import WomenPage from "./components/clothes/adults/WomenPage";
+import AddMan from "./components/clothes/adults/AddMan";
+import AddWoman from "./components/clothes/adults/AddWoman";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -96,7 +100,6 @@ const routes = createBrowserRouter([
     ],
   },
 
-  // ... andra rutter ...
   {
     path: "electronics",
     element: <ElectronicList />,
@@ -193,7 +196,6 @@ const routes = createBrowserRouter([
       },
     ],
   },
-  // ... andra rutter ...
 
   {
     path: "/vehicles",
@@ -251,16 +253,6 @@ const routes = createBrowserRouter([
           },
         ],
       },
-      // {
-      //   path: "tracks",
-      //   element: <TrackPage />,
-      //   children: [
-      //     {
-      //       path: "addtrack",
-      //       element: <AddTrack />,
-      //     },
-      //   ],
-      // },
     ],
   },
   {
@@ -270,6 +262,28 @@ const routes = createBrowserRouter([
       {
         path: "adults",
         element: <Adults />,
+        children: [
+          {
+            path: "men",
+            element: <MenPage />,
+            children: [
+              {
+                path: "addman",
+                element: <AddMan />,
+              },
+            ],
+          },
+          {
+            path: "women",
+            element: <WomenPage />,
+            children: [
+              {
+                path: "addwoman",
+                element: <AddWoman />,
+              },
+            ],
+          },
+        ],
       },
 
       {
