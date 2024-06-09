@@ -29,17 +29,17 @@ const AddMobile = () => {
     name: "",
     batteryHealth: [],
     screenSize: [],
-    images: [],
+    // images: [],
     colors: [],
     condition: [],
     receipt: [],
     ownershipDuration: [],
     price: 0,
     description: "",
-    category: "",
-    location: {},
     file: "",
-    // user: "",
+    // category: "6664145f5ec3486d853c93af",
+    // location: {},
+    // user: "66407a5a4cb15e6a95677473",
     // selectedCategory: "",
   });
 
@@ -64,13 +64,15 @@ const AddMobile = () => {
       price: electronicValues.price,
       description: electronicValues.description,
       file: electronicValues.file,
-      category: electronicValues.category,
+      // category: electronicValues.category,
+      // user: electronicValues.user,
     };
 
     axios
       .post("http://localhost:5000/api/electronics", newDevice)
-      .then((response) => {
-        console.log(response.status, response.data);
+      .then((response) => console.log(response))
+      .catch((err) => {
+        console.log("Errorr", err);
       });
   };
 
@@ -96,26 +98,28 @@ const AddMobile = () => {
   return (
     <div className="container mt-2 mb-5">
       <div className="col">
-        <h3 className="lead">
+        <h3 className="lead text-uppercase">
           Sälj telefon <PhoneIphoneIcon />
         </h3>
         <Box component="form" noValidate autoComplete="off">
           <InputLabel htmlFor="name" shrink></InputLabel>
           <TextField
             fullWidth
-            value={electronicValues.name}
+            value={electronicValues.name ?? ""}
             variant="filled"
             id="name"
             label="Namn"
+            name="name"
             onChange={(event) => changeHandler(event, "name")}
             sx={{ marginBottom: ".4rem" }}
           />
 
           <TextField
             fullWidth
-            id="standard-basic"
+            id="price"
             label="Pris"
-            value={electronicValues.price}
+            name="price"
+            value={electronicValues.price ?? ""}
             variant="filled"
             onChange={(event) => changeHandler(event, "price")}
             sx={{ marginBottom: ".4rem" }}
@@ -127,38 +131,40 @@ const AddMobile = () => {
             minRows={4}
             maxRows={4}
             multiline
+            id="description"
             variant="filled"
-            value={electronicValues?.description}
+            value={electronicValues.description ?? ""}
             onChange={(event) => changeHandler(event, "description")}
             sx={{ marginBottom: ".4rem" }}
           />
           <TextField
             fullWidth
             name="file"
+            id="file"
             type="file"
             color="secondary"
             variant="outlined"
-            value={electronicValues?.file}
+            value={electronicValues.file ?? ""}
             sx={{ marginBottom: ".4rem" }}
             onChange={(event) => changeHandler(event, "file")}
           />
 
-          <Box sx={{ marginBottom: ".3rem" }}>
+          {/* <Box sx={{ marginBottom: ".3rem" }}>
             <Select
               fullWidth
-              onChange={(event) => changeHandler(event, "category")}
               name="category"
               id="category"
               variant="filled"
               value={electronicValues.category}
+              onChange={(event) => changeHandler(event, "category")}
             >
               <MenuItem value="selected">Välj kategori</MenuItem>
               {categories &&
                 categories.map((c) => (
-                  <MenuItem value={c._id}>{c.name}</MenuItem>
+                  <MenuItem key={c._id}>{c.name}</MenuItem>
                 ))}
             </Select>
-          </Box>
+          </Box> */}
 
           <SelectElectronicOption
             label="Batterihälsa"
