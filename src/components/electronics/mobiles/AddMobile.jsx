@@ -14,7 +14,14 @@ import {
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import { mobileOptionsBasicData } from "../../../basicData/electronics/mobiles/mobile";
 import { Save } from "@mui/icons-material";
-import { getCategories, getElectronics } from "../../../backend/api";
+import {
+  addElectronic,
+  getCategories,
+  getElectronics,
+} from "../../../backend/api";
+import axios from "axios";
+
+const base_url = "http://localhost:5000/api";
 
 const AddMobile = () => {
   const [categories, setCategories] = useState([]);
@@ -29,7 +36,7 @@ const AddMobile = () => {
     ownershipDuration: [],
     price: 0,
     description: "",
-    categories: "",
+    category: "",
     location: {},
     file: "",
     // user: "",
@@ -46,6 +53,25 @@ const AddMobile = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    const newDevice = {
+      name: electronicValues.name,
+      batteryHealth: electronicValues.batteryHealth,
+      screenSize: electronicValues.screenSize,
+      colors: electronicValues.colors,
+      condition: electronicValues.condition,
+      receipt: electronicValues.receipt,
+      ownershipDuration: electronicValues.ownershipDuration,
+      price: electronicValues.price,
+      description: electronicValues.description,
+      file: electronicValues.file,
+      category: electronicValues.category,
+    };
+
+    axios
+      .post("http://localhost:5000/api/electronics", newDevice)
+      .then((response) => {
+        console.log(response.status, response.data);
+      });
   };
 
   const fetchElectronics = async () => {
@@ -55,6 +81,16 @@ const AddMobile = () => {
   };
   useEffect(() => {
     fetchElectronics();
+  }, []);
+
+  const filterCategories = async () => {
+    const data = await getCategories();
+    console.log("Categories: ", data);
+    setCategories(data);
+  };
+
+  useEffect(() => {
+    filterCategories();
   }, []);
 
   return (
@@ -71,7 +107,7 @@ const AddMobile = () => {
             variant="filled"
             id="name"
             label="Namn"
-            onChange={(event) => changeHandler(event)}
+            onChange={(event) => changeHandler(event, "name")}
             sx={{ marginBottom: ".4rem" }}
           />
 
@@ -81,7 +117,7 @@ const AddMobile = () => {
             label="Pris"
             value={electronicValues.price}
             variant="filled"
-            onChange={(event) => changeHandler(event)}
+            onChange={(event) => changeHandler(event, "price")}
             sx={{ marginBottom: ".4rem" }}
           />
           <TextField
@@ -92,8 +128,8 @@ const AddMobile = () => {
             maxRows={4}
             multiline
             variant="filled"
-            value={electronicValues.description}
-            onChange={(event) => changeHandler(event)}
+            value={electronicValues?.description}
+            onChange={(event) => changeHandler(event, "description")}
             sx={{ marginBottom: ".4rem" }}
           />
           <TextField
@@ -102,9 +138,27 @@ const AddMobile = () => {
             type="file"
             color="secondary"
             variant="outlined"
-            value={electronicValues.file}
+            value={electronicValues?.file}
             sx={{ marginBottom: ".4rem" }}
+            onChange={(event) => changeHandler(event, "file")}
           />
+
+          <Box sx={{ marginBottom: ".3rem" }}>
+            <Select
+              fullWidth
+              onChange={(event) => changeHandler(event, "category")}
+              name="category"
+              id="category"
+              variant="filled"
+              value={electronicValues.category}
+            >
+              <MenuItem value="selected">Välj kategori</MenuItem>
+              {categories &&
+                categories.map((c) => (
+                  <MenuItem value={c._id}>{c.name}</MenuItem>
+                ))}
+            </Select>
+          </Box>
 
           <SelectElectronicOption
             label="Batterihälsa"

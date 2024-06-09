@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const base_url = "http://localhost:5000/api";
 
 export const getCategories = async () => {
@@ -17,5 +19,18 @@ export const getElectronics = async () => {
     return data;
   } catch (error) {
     console.log("Error", error);
+  }
+};
+
+export const addElectronic = async (newDevice) => {
+  try {
+    const response = await axios
+      .post(`${base_url}/electronics`, { newDevice })
+      .then((response) => {
+        console.log("New device data: ", response.status, response.data.token);
+      });
+    return response;
+  } catch (error) {
+    console.log("Error: ", error);
   }
 };
