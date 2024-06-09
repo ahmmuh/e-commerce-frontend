@@ -13,7 +13,10 @@ const Dashboard = () => {
         <div className="col sidebar-left">
           <LeftSidebar />
         </div>
-        <div className="col-9">Content</div>
+        <div className="col-9 pt-3">
+          <h4>Content kommer här...</h4>
+          <Outlet />
+        </div>
       </div>
     </section>
   );

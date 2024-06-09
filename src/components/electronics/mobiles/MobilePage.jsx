@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const MobilePage = () => {
   return (
-    <div classNameName="container">
+    <div className="container">
       <nav className="nav justify-content-center  ">
         <Link to={"addmobile"} className="nav-link active">
           Add
