@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const MenPage = () => {
   return (
-    <div classNameName="container">
+    <div className="container">
       <nav className="nav justify-content-center  ">
         <Link to={"addman"} className="nav-link active">
           Add

@@ -36,19 +36,41 @@ const AddMobile = () => {
     ownershipDuration: [],
     price: 0,
     description: "",
-    file: "",
+    thumbnailImage: "",
     // category: "6664145f5ec3486d853c93af",
     // location: {},
     // user: "66407a5a4cb15e6a95677473",
     // selectedCategory: "",
   });
 
+  // const changeHandler = (e, category) => {
+  //   e.preventDefault();
+  //   if (e.target.files && e.target.files[0]) {
+  //     const fileURL = URL.createObjectURL(e.target.files[0]);
+  //     setElectronicValues({
+  //       ...electronicValues,
+  //       thumbnailImage: fileURL,
+  //       [category]: e.target.value,
+  //     });
+  //   }
+  // };
+
   const changeHandler = (e, category) => {
     e.preventDefault();
-    setElectronicValues({
-      ...electronicValues,
-      [category]: e.target.value,
-    });
+    // Kontrollera om det är en filuppladdning
+    if (category === "thumbnailImage" && e.target.files && e.target.files[0]) {
+      const fileURL = URL.createObjectURL(e.target.files[0]);
+      setElectronicValues({
+        ...electronicValues,
+        thumbnailImage: fileURL,
+      });
+    } else {
+      // Hantera uppdatering av andra fält
+      setElectronicValues({
+        ...electronicValues,
+        [category]: e.target.value,
+      });
+    }
   };
 
   const submitHandler = (e) => {
@@ -63,7 +85,7 @@ const AddMobile = () => {
       ownershipDuration: electronicValues.ownershipDuration,
       price: electronicValues.price,
       description: electronicValues.description,
-      file: electronicValues.file,
+      thumbnailImage: electronicValues.thumbnailImage,
       // category: electronicValues.category,
       // user: electronicValues.user,
     };
@@ -139,14 +161,14 @@ const AddMobile = () => {
           />
           <TextField
             fullWidth
-            name="file"
-            id="file"
+            name="thumbnailImage"
+            id="thumbnailImage"
             type="file"
             color="secondary"
             variant="outlined"
-            value={electronicValues.file ?? ""}
+            value={electronicValues.thumbnailImage ?? ""}
             sx={{ marginBottom: ".4rem" }}
-            onChange={(event) => changeHandler(event, "file")}
+            onChange={(event) => changeHandler(event, "thumbnailImage")}
           />
 
           {/* <Box sx={{ marginBottom: ".3rem" }}>
