@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, capitalize } from "@mui/material";
 import React, { useState } from "react";
 
 const AddMan = () => {
@@ -6,25 +6,23 @@ const AddMan = () => {
     name: "",
     description: "",
     price: 0,
-    // user,
-    // category,
-    // thumbnail: "",
-  });
-  const [selectedFile, setSelectedFile] = useState({
     thumbnail: "",
     images: [],
   });
 
   const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setSelectedFile(file);
-  };
-  const changeHandler = (e) => {
-    // const { name, value } = e.target.value;
-    setCloth({
-      ...cloth,
-      [e.target.name]: e.target.value,
-    });
+    const files = e.target.files;
+    console.log("Antal filer:", files.length); // Logga antalet filer
+    const updatedImages = Array.from(files);
+    console.log("Alla filer:", updatedImages); // Logga alla filer
+    console.log("Andra filen:", updatedImages[1]); // Logga den andra filen
+
+    setCloth((prevCloth) => ({
+      ...prevCloth,
+      thumbnail: updatedImages[0], // Första filen som thumbnail
+      images: updatedImages.slice(1), // Resten av filerna som images
+    }));
+    console.log("updatedImages: ", updatedImages);
   };
 
   const submitHandler = (e) => {
@@ -32,11 +30,11 @@ const AddMan = () => {
     const clothData = {
       name: cloth.name,
       description: cloth.description,
-      images: cloth.images,
       price: cloth.price,
+      thumbnail: cloth.thumbnail,
+      images: cloth.images,
       // user,
       // category,
-      thumbnail: selectedFile,
     };
     console.log("New cloth was added: ", clothData);
   };
@@ -52,7 +50,7 @@ const AddMan = () => {
         id="name"
         name="name"
         value={cloth.name}
-        onChange={changeHandler}
+        onChange={(e) => setCloth({ ...cloth, name: e.target.value })}
       />
       <TextField
         label="Description"
@@ -64,18 +62,7 @@ const AddMan = () => {
         id="description"
         name="description"
         value={cloth.description}
-        onChange={changeHandler}
-      />
-      <TextField
-        className="mb-2"
-        fullWidth
-        type="file"
-        accept="image/*"
-        onChange={handleFileChange}
-        variant="standard"
-        id="images"
-        name="images"
-        value={selectedFile.images}
+        onChange={(e) => setCloth({ ...cloth, description: e.target.value })}
       />
       <TextField
         label="Price"
@@ -85,7 +72,7 @@ const AddMan = () => {
         variant="standard"
         id="price"
         name="price"
-        onChange={changeHandler}
+        onChange={(e) => setCloth({ ...cloth, price: e.target.value })}
       />
       <TextField
         fullWidth
@@ -94,14 +81,24 @@ const AddMan = () => {
         variant="standard"
         id="thumbnail"
         name="thumbnail"
-        value={selectedFile.thumbnail}
+        onChange={handleFileChange}
+      />
+      <TextField
+        className="mb-2"
+        fullWidth
+        type="file"
+        accept="image/*"
+        multiple
+        variant="standard"
+        id="images"
+        name="images"
         onChange={handleFileChange}
       />
 
       <Button variant="contained" className="mt-2" fullWidth type="submit">
-        Contained
+        Spara
       </Button>
-      <p>Vald fil: {selectedFile.name}</p>
+      <p>Vald fil: {cloth.name}</p>
     </form>
   );
 };
