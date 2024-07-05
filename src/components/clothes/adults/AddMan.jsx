@@ -8,6 +8,7 @@ const AddMan = () => {
     price: 0,
     thumbnail: "",
     images: [],
+    color: "#850001",
   });
 
   const handleFileChange = (e) => {
@@ -73,6 +74,15 @@ const AddMan = () => {
         id="price"
         name="price"
         onChange={(e) => setCloth({ ...cloth, price: e.target.value })}
+      />
+      <TextField
+        fullWidth
+        label="Färg"
+        type="color"
+        variant="standard"
+        id="color"
+        name="color"
+        onChange={handleFileChange}
       />
       <TextField
         fullWidth
