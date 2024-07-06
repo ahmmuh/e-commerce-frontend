@@ -18,7 +18,7 @@ import {
   addElectronic,
   getCategories,
   getElectronics,
-} from "../../../backend/api";
+} from "../../../backend/api.js";
 import axios from "axios";
 import ImageUpload from "../../../reuseableComponents/forms/ImageUpload";
 
@@ -74,7 +74,7 @@ const AddMobile = () => {
     }
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     const newDevice = {
       name: electronicValues.name,
@@ -90,13 +90,16 @@ const AddMobile = () => {
       // category: electronicValues.category,
       // user: electronicValues.user,
     };
-  console.log("New device: ", newDevice)
-    /*axios
-      .post("http://localhost:5000/api/electronics", newDevice)
-      .then((response) => console.log(response))
-      .catch((err) => {
-        console.log("Errorr", err);
-      });*/
+    try {
+      const response = await addElectronic(newDevice);
+      console.log(response.data)
+    }
+    catch (error) {
+      console.log(error)
+    }
+    finally {
+      console.log("Completed")
+    }
   };
 
   const fetchElectronics = async () => {
@@ -170,7 +173,7 @@ const AddMobile = () => {
                 type="file"
                 accept="image/*"
                 color="secondary"
-                variant="outlined"
+                 variant="outlined"
                 onChange={(event) => changeHandler(event, "thumbnailImage")}
                 sx={{marginBottom: ".4rem"}}
             />*/}

@@ -36,7 +36,7 @@ const SelectElectronicOption = ({
             <MenuItem value=""></MenuItem>
             {isValidArray &&
               data?.map((option) => (
-                <MenuItem key={option._id} value={option.value ?? ""}>
+                <MenuItem key={option.id} value={option.value ?? ""}>
                   {option.label}
                 </MenuItem>
               ))}

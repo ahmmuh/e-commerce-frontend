@@ -15,22 +15,44 @@ export const getCategories = async () => {
 export const getElectronics = async () => {
   try {
     const response = await fetch(`${base_url}/electronics`);
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     console.log("Error", error);
   }
 };
 
 export const addElectronic = async (newDevice) => {
+
+/*  axios({
+    method: 'post',
+    url: '/user/12345',
+    data: payload, // you are sending body instead
+    headers: {
+      // 'Authorization': `bearer ${token}`,
+      'Content-Type': 'application/json'
+    },
+  })*/
   try {
-    const response = await axios
-      .post(`${base_url}/electronics`, { newDevice })
-      .then((response) => {
-        console.log("New device data: ", response.status, response.data.token);
-      });
-    return response;
+    return await axios({
+      method: 'post',
+      url: `${base_url}/electronics`,
+      data: newDevice, // you are sending body instead
+      headers: {
+        // 'Authorization': `bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+    })
+
+
+
+
+       /* .post(`${base_url}/electronics`, {newDevice})
+        .then((response) => {
+          console.log("sparat data: ",response.data)
+          console.log("New device data: ", response.status, response.data.token);
+        });*/
   } catch (error) {
     console.log("Error: ", error);
+    throw new Error(error)
   }
 };
