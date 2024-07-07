@@ -62,6 +62,7 @@ import MenPage from "./components/clothes/adults/MenPage";
 import WomenPage from "./components/clothes/adults/WomenPage";
 import AddMan from "./components/clothes/adults/AddMan";
 import AddWoman from "./components/clothes/adults/AddWoman";
+import MobileList from "./components/electronics/mobiles/MobileList";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -122,6 +123,10 @@ const routes = createBrowserRouter([
             path: "addmobile",
             element: <AddMobile />,
           },
+          {
+            path: "mobileList",
+            element: <MobileList />
+          }
         ],
       },
       {

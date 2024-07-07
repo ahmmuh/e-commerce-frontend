@@ -77,14 +77,17 @@ const AddMobile = () => {
       // user: electronicValues.user,
     };
 
-    console.log("new data fore servern: ",newDevice)
 
-    const response = await axios.post("http://localhost:5000/api/electronics",newDevice)
-    const data = await  response.data;
+    //console.log("new data fore servern: ",newDevice)
 
-    console.log("new data is here: ",data)
+    const response = await addElectronic(newDevice)
+    if (response){
+      console.log("Response: ", JSON.parse(response.config.data))
 
-
+    }
+  else {
+    console.log("Nothing here")
+    }
   };
 
   const fetchElectronics = async () => {

@@ -8,7 +8,7 @@ const MobilePage = () => {
         <Link to={"addmobile"} className="nav-link active">
           Add
         </Link>
-        <Link to="/" className="nav-link ">
+        <Link to="mobileList" className="nav-link ">
           Mobile list
         </Link>
       </nav>
