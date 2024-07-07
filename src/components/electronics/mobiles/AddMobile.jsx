@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import SelectElectronicOption from "../../../reuseableComponents/forms/SelectElectronicOption";
-import {
-  Box,
-  Button,
-  FormControl,
-  FormHelperText,
-  Input,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
+import {Box, Button, InputLabel, TextField,} from "@mui/material";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import { mobileOptionsBasicData } from "../../../basicData/electronics/mobiles/mobile";
-import { Save } from "@mui/icons-material";
-import {
-  addElectronic,
-  getCategories,
-  getElectronics,
-} from "../../../backend/api.js";
-import axios from "axios";
+import {mobileOptionsBasicData} from "../../../basicData/electronics/mobiles/mobile";
+import {Save} from "@mui/icons-material";
+import {addElectronic, getCategories, getElectronics,} from "../../../backend/api.js";
 import ImageUpload from "../../../reuseableComponents/forms/ImageUpload";
+import axios from "axios";
 
 const base_url = "http://localhost:5000/api";
 
@@ -90,16 +76,15 @@ const AddMobile = () => {
       // category: electronicValues.category,
       // user: electronicValues.user,
     };
-    try {
-      const response = await addElectronic(newDevice);
-      console.log(response.data)
-    }
-    catch (error) {
-      console.log(error)
-    }
-    finally {
-      console.log("Completed")
-    }
+
+    console.log("new data fore servern: ",newDevice)
+
+    const response = await axios.post("http://localhost:5000/api/electronics",newDevice)
+    const data = await  response.data;
+
+    console.log("new data is here: ",data)
+
+
   };
 
   const fetchElectronics = async () => {
@@ -260,7 +245,7 @@ const AddMobile = () => {
         </div>
         {
           electronicValues.thumbnailImage ?
-              <img src={electronicValues.thumbnailImage} width={150} height={100}  alt="Min bild"/>: "No bild"
+              <img src={electronicValues.thumbnailImage} width={150} height={150}  alt="Min bild"/>: "No bild"
         }
 
       </div>
