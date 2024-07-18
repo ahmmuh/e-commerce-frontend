@@ -8,7 +8,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faCar } from "@fortawesome/free-solid-svg-icons/faCar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Computer, Home, House } from "@mui/icons-material";
 import * as React from "react";
 import { Link } from "react-router-dom";
 

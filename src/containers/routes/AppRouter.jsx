@@ -1,11 +1,10 @@
 import React,{lazy, Suspense} from "react";
 import {
-    BrowserRouter,
-    BrowserRouter as Router,
     RouterProvider,
     createBrowserRouter,
 } from "react-router-dom";
-const NotFound = lazy(() => import('../error/NotFound.jsx'));
+// const App = lazy(() => import("../../App"));
+const NotFound = lazy(() => import('../error/NotFound'));
 const Dashboard = lazy(() => import('../dashboard/Dashboard'));
 const HobbyList = lazy(() => import ("../hobbies/HobbyList"));
 const BookPage = lazy(() => import ("../hobbies/books/BookPage"));
@@ -55,370 +54,60 @@ const ChildrenList = lazy(() => import ("../clothes/children/ChildrenList"));
 const BoysPage = lazy(() => import ("../clothes/children/boys/BoysPage"));
 const AddBoy = lazy(() => import ("../clothes/children/boys/AddBoy"));
 const GirlsPage = lazy(() => import ("../clothes/children/girls/GirlsPage"));
-const App = lazy(() => import ("../../App"));
 
-export const AppRouter = () =>{
-    //return
-}
-const AppRoutes = createBrowserRouter([
+
+const appRoutes = createBrowserRouter([
     {
         path: "/",
-        element: (
-            <Suspense fallback={<div>Loading...</div>}> <App />,
-            </Suspense>
-        ),
-        errorElement: <NotFound />,
-    },
-    {
-        path: "/start",
         element: (
             <Suspense fallback={<div>Loading...</div>}>
         element: <Dashboard />
             </Suspense>
-        )
-    },
-
-    {
-        path: "hobbies",
-        element: (
-            <Suspense fallback={<div>Loading...</div>}>
-
-            <HobbyList />
-            </Suspense>
         ),
-        children: [
+        children:[
             {
-                path: "books",
-
+                path: "hobbies",
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>
-                        <BookPage />
+
+                        <HobbyList />
                     </Suspense>
                 ),
                 children: [
                     {
-                        path: "addbook",
+                        path: "books",
+
                         element: (
                             <Suspense fallback={<div>Loading...</div>}>
-                                <AddBook />
-                            </Suspense>
-                        )
-                    },
-                ],
-            },
-            {
-                path: "boats",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <BoatPage />
-                    </Suspense>
-                ),
-                children: [
-                    {
-                        path: "addboat",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <AddBoat />
-                            </Suspense>
-                        )
-                    },
-                ],
-            },
-        ],
-    },
-
-    {
-        path: "electronics",
-        element: (
-            <Suspense fallback={<div>Loading...</div>}>
-                <ElectronicList />
-            </Suspense>
-        ),
-        children: [
-            {
-                path: "laptops",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <LaptopPage />
-
-                    </Suspense>
-                ),
-                children: [
-                    {
-                        path: "addlaptop",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <AddLaptop />
-
+                                <BookPage />
                             </Suspense>
                         ),
-                    },
-                ],
-            },
-            {
-                path: "mobiles",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-
-                        <MobilePage />
-
-                    </Suspense>
-                ),
-                children: [
-                    {
-                        path: "addmobile",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-
-                                <AddMobile />
-                            </Suspense>
-                        )
-                    },
-                    {
-                        path: "mobileList",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <MobileList />
-                            </Suspense>
-                        )
-                    }
-                ],
-            },
-            {
-                path: "ipads",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-
-                        <IpadPage />
-                    </Suspense>
-                ),
-                children: [
-                    {
-                        path: "addipad",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <AddIpad />
-
-                            </Suspense>),
-                    },
-                ],
-            },
-            {
-                path: "desktops",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <DesktopPage />
-                    </Suspense>)
-                        ,
-                children: [
-                    {
-                        path: "adddesktop",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <AddDesktop />
-
-                            </Suspense> ),
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        path: "/houses",
-        element: <AllHouses />,
-        children: [
-            {
-                path: "rents",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <HouseRentList /> </Suspense>),
-                children: [
-                    {
-                        path: "addrenthouse",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-
-                                <AddRentHouse />
-
-                            </Suspense>),
-                    },
-                    {
-                        path: "appartmentrent",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-
-                                <AppartmentRentPage /> </Suspense>),
-                    },
-                    {
-                        path: "houserent",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <HouseRentPage /> </Suspense>),
-                    },
-                    {
-                        path: "villarent",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <VilaRentPage /> </Suspense>),
-                    },
-                ],
-            },
-            {
-                path: "sells",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-
-                        <HouseSellList />
-
-                    </Suspense>),
-                children: [
-                    {
-                        path: "addsellhouse",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <AddSellHouse /> </Suspense>),
-                    },
-                    {
-                        path: "appartmentsell",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <AppartmentSellPage /> </Suspense>),
-                    },
-                    {
-                        path: "housesell",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>  <HouseSellPage /> </Suspense>
-                        ),
-                    },
-                    {
-                        path: "villasell",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <VillaSellPage /> </Suspense>),
-                    },
-                ],
-            },
-        ],
-    },
-
-    {
-        path: "/vehicles",
-        element: (
-            <Suspense fallback={<div>Loading...</div>}>
-                <VehicleList /> </Suspense>),
-
-        children: [
-            {
-                path: "cars",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <CarPage /> </Suspense>
-                ),
-                children: [
-                    {
-                        path: "addcar",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <AddCar /> </Suspense>
-                        ),
-                    },
-                ],
-            },
-
-            {
-                path: "buses",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <BusPage /> </Suspense>),
-                children: [
-                    {
-                        path: "addbus",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>  <AddBus /> </Suspense>
-                        ),
-                    },
-                ],
-            },
-            {
-                path: "tracks",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <TrackPage /> </Suspense>),
-                children: [
-                    {
-                        path: "addtrack",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <AddTrack /> </Suspense>),
-                    },
-                ],
-            },
-            {
-                path: "mopeds",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <MopedPage /> </Suspense>),
-                children: [
-                    {
-                        path: "addmoped",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <AddMoped /> </Suspense>),
-                    },
-                ],
-            },
-            {
-                path: "motorcycles",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <MotorCyclePage /> </Suspense> ),
-                children: [
-                    {
-                        path: "addmotorcycle",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <AddMotorCycle /> </Suspense>),
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        path: "clothes",
-        element: (
-            <Suspense fallback={<div>Loading...</div>}>
-                <Clothes /> </Suspense>),
-        children: [
-            {
-                path: "adults",
-                element: (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <Adults /> </Suspense>),
-                children: [
-                    {
-                        path: "men",
-                        element: (
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <MenPage /> </Suspense>),
                         children: [
                             {
-                                path: "addman",
+                                path: "addbook",
                                 element: (
                                     <Suspense fallback={<div>Loading...</div>}>
-                                        <AddMan /> </Suspense>),
+                                        <AddBook />
+                                    </Suspense>
+                                )
                             },
                         ],
                     },
                     {
-                        path: "women",
+                        path: "boats",
                         element: (
                             <Suspense fallback={<div>Loading...</div>}>
-                                <WomenPage /> </Suspense>),
+                                <BoatPage />
+                            </Suspense>
+                        ),
                         children: [
                             {
-                                path: "addwoman",
+                                path: "addboat",
                                 element: (
-                                    <Suspense fallback={<div>Loading...</div>}>  <AddWoman /> </Suspense>),
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <AddBoat />
+                                    </Suspense>
+                                )
                             },
                         ],
                     },
@@ -426,37 +115,346 @@ const AppRoutes = createBrowserRouter([
             },
 
             {
-                path: "children",
+                path: "electronics",
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>
-                        <ChildrenList /> </Suspense>
+                        <ElectronicList />
+                    </Suspense>
                 ),
                 children: [
                     {
-                        path: "boys",
+                        path: "laptops",
                         element: (
-                            <Suspense fallback={<div>Loading...</div>}>  <BoysPage /> </Suspense>),
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <LaptopPage />
+
+                            </Suspense>
+                        ),
                         children: [
                             {
-                                path: "addboy",
+                                path: "addlaptop",
                                 element: (
-                                    <Suspense fallback={<div>Loading...</div>}>  <AddBoy /> </Suspense>),
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <AddLaptop />
+
+                                    </Suspense>
+                                ),
                             },
                         ],
                     },
                     {
-                        path: "girls",
+                        path: "mobiles",
                         element: (
-                            <Suspense fallback={<div>Loading...</div>}>  <GirlsPage /> </Suspense>),
-                        children: [{ path: "addgirl", element: <AddGirl /> }],
+                            <Suspense fallback={<div>Loading...</div>}>
+
+                                <MobilePage />
+
+                            </Suspense>
+                        ),
+                        children: [
+                            {
+                                path: "addmobile",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+
+                                        <AddMobile />
+                                    </Suspense>
+                                )
+                            },
+                            {
+                                path: "mobileList",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <MobileList />
+                                    </Suspense>
+                                )
+                            }
+                        ],
+                    },
+                    {
+                        path: "ipads",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+
+                                <IpadPage />
+                            </Suspense>
+                        ),
+                        children: [
+                            {
+                                path: "addipad",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <AddIpad />
+
+                                    </Suspense>),
+                            },
+                        ],
+                    },
+                    {
+                        path: "desktops",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <DesktopPage />
+                            </Suspense>)
+                        ,
+                        children: [
+                            {
+                                path: "adddesktop",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <AddDesktop />
+
+                                    </Suspense> ),
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                path: "/houses",
+                element: <AllHouses />,
+                children: [
+                    {
+                        path: "rents",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <HouseRentList /> </Suspense>),
+                        children: [
+                            {
+                                path: "addrenthouse",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+
+                                        <AddRentHouse />
+
+                                    </Suspense>),
+                            },
+                            {
+                                path: "appartmentrent",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+
+                                        <AppartmentRentPage /> </Suspense>),
+                            },
+                            {
+                                path: "houserent",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <HouseRentPage /> </Suspense>),
+                            },
+                            {
+                                path: "villarent",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <VilaRentPage /> </Suspense>),
+                            },
+                        ],
+                    },
+                    {
+                        path: "sells",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+
+                                <HouseSellList />
+
+                            </Suspense>),
+                        children: [
+                            {
+                                path: "addsellhouse",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <AddSellHouse /> </Suspense>),
+                            },
+                            {
+                                path: "appartmentsell",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <AppartmentSellPage /> </Suspense>),
+                            },
+                            {
+                                path: "housesell",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>  <HouseSellPage /> </Suspense>
+                                ),
+                            },
+                            {
+                                path: "villasell",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <VillaSellPage /> </Suspense>),
+                            },
+                        ],
+                    },
+                ],
+            },
+
+            {
+                path: "/vehicles",
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <VehicleList /> </Suspense>),
+
+                children: [
+                    {
+                        path: "cars",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <CarPage /> </Suspense>
+                        ),
+                        children: [
+                            {
+                                path: "addcar",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <AddCar /> </Suspense>
+                                ),
+                            },
+                        ],
+                    },
+
+                    {
+                        path: "buses",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <BusPage /> </Suspense>),
+                        children: [
+                            {
+                                path: "addbus",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>  <AddBus /> </Suspense>
+                                ),
+                            },
+                        ],
+                    },
+                    {
+                        path: "tracks",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <TrackPage /> </Suspense>),
+                        children: [
+                            {
+                                path: "addtrack",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <AddTrack /> </Suspense>),
+                            },
+                        ],
+                    },
+                    {
+                        path: "mopeds",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <MopedPage /> </Suspense>),
+                        children: [
+                            {
+                                path: "addmoped",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <AddMoped /> </Suspense>),
+                            },
+                        ],
+                    },
+                    {
+                        path: "motorcycles",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <MotorCyclePage /> </Suspense> ),
+                        children: [
+                            {
+                                path: "addmotorcycle",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <AddMotorCycle /> </Suspense>),
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                path: "clothes",
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Clothes /> </Suspense>),
+                children: [
+                    {
+                        path: "adults",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <Adults /> </Suspense>),
+                        children: [
+                            {
+                                path: "men",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <MenPage /> </Suspense>),
+                                children: [
+                                    {
+                                        path: "addman",
+                                        element: (
+                                            <Suspense fallback={<div>Loading...</div>}>
+                                                <AddMan /> </Suspense>),
+                                    },
+                                ],
+                            },
+                            {
+                                path: "women",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <WomenPage /> </Suspense>),
+                                children: [
+                                    {
+                                        path: "addwoman",
+                                        element: (
+                                            <Suspense fallback={<div>Loading...</div>}>  <AddWoman /> </Suspense>),
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+
+                    {
+                        path: "children",
+                        element: (
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <ChildrenList /> </Suspense>
+                        ),
+                        children: [
+                            {
+                                path: "boys",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>  <BoysPage /> </Suspense>),
+                                children: [
+                                    {
+                                        path: "addboy",
+                                        element: (
+                                            <Suspense fallback={<div>Loading...</div>}>  <AddBoy /> </Suspense>),
+                                    },
+                                ],
+                            },
+                            {
+                                path: "girls",
+                                element: (
+                                    <Suspense fallback={<div>Loading...</div>}>  <GirlsPage /> </Suspense>),
+                                children: [{ path: "addgirl", element: <AddGirl /> }],
+                            },
+                        ],
                     },
                 ],
             },
         ],
+        errorElement: <NotFound />,
+
     },
+
+
 ]);
 
 
 
 
- export default AppRoutes;
+const AppRouter = () => (
+    <RouterProvider router={appRoutes} />
+);
+
+
+export default AppRouter;
