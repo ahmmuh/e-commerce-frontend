@@ -1,15 +1,19 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {RouterProvider, createBrowserRouter, BrowserRouter} from "react-router-dom";
 import "./App.css";
-import Dashboard from "./components/dashboard/Dashboard";
-import ElectronicList from "./components/electronics/ElectronicList";
-import MobilePage from "./components/electronics/mobiles/MobilePage";
-import SearchAppBar from "./components/appbar/Appbar";
-import AppSearchBar from "./components/appbar/Appbar";
+import ElectronicList from "./containers/electronics/ElectronicList";
+import MobilePage from "./containers/electronics/mobiles/MobilePage";
+import SearchAppBar from "./containers/appbar/Appbar";
+import AppSearchBar from "./containers/appbar/Appbar";
+import React from "react";
+import Dashboard from "./containers/dashboard/Dashboard";
+import AppRouter from "./containers/routes/AppRouter";
 
 const App = () => {
   return (
     <div>
-      <Dashboard />
+        <AppSearchBar />
+            <Dashboard />
+        <AppRouter />
     </div>
   );
 };

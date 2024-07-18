@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Chip, Stack, TextField } from "@mui/material";
 import { Home } from "@mui/icons-material";
-import SelectHouseOptions from "../../../reuseableComponents/forms/SelectHouseOptions";
+import SelectHouseOptions from "../../../components/forms/SelectHouseOptions";
 import { houseAttributes } from "../../../basicData/houses/houseAttributes";
 
 const AddRentHouse = () => {

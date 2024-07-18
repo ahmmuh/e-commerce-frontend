@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SelectHouseOptions from "../../../reuseableComponents/forms/SelectHouseOptions";
+import SelectHouseOptions from "../../../components/forms/SelectHouseOptions";
 import { Box, Button, Chip, Stack, TextField } from "@mui/material";
 import { houseAttributes } from "../../../basicData/houses/houseAttributes";
 import { Home } from "@mui/icons-material";

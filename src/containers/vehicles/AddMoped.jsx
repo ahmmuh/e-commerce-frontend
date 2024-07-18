@@ -1,9 +1,9 @@
-import { Box, Button, TextField } from "@mui/material";
 import React, { useState } from "react";
-import SelectVehicleOptions from "../../reuseableComponents/forms/SelectVehicleOptions";
 import { carAttributes } from "../../basicData/vehicles/carAttributes";
+import { Box, Button, TextField } from "@mui/material";
+import SelectVehicleOptions from "../../components/forms/SelectVehicleOptions";
 
-const AddCar = () => {
+const AddMoped = () => {
   const [selectedValues, setSelectedValues] = useState({
     transmission: [],
     drive: [],
@@ -42,15 +42,6 @@ const AddCar = () => {
               id="standard-basic"
               label="Name"
               variant="standard"
-            />
-
-            <TextField
-              fullWidth
-              id="hastkraft"
-              label="Hastkraft"
-              name="hastkraf"
-              variant="standard"
-              type="number"
             />
           </Box>
 
@@ -133,5 +124,4 @@ const AddCar = () => {
     </div>
   );
 };
-
-export default AddCar;
+export default AddMoped;

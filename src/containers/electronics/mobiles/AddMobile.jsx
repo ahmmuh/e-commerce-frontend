@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-import SelectElectronicOption from "../../../reuseableComponents/forms/SelectElectronicOption";
+import SelectElectronicOption from "../../../components/forms/SelectElectronicOption";
 import {Box, Button, InputLabel, TextField,} from "@mui/material";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import {mobileOptionsBasicData} from "../../../basicData/electronics/mobiles/mobile";
 import {Save} from "@mui/icons-material";
 import {addElectronic, getCategories, getElectronics,} from "../../../backend/api.js";
-import ImageUpload from "../../../reuseableComponents/forms/ImageUpload";
+import ImageUpload from "../../../components/forms/ImageUpload";
 import axios from "axios";
 
 const base_url = "http://localhost:5000/api";

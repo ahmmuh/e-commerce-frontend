@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import SelectElectronicOption from "../../reuseableComponents/forms/SelectElectronicOption";
 import { Box, Button, TextField } from "@mui/material";
+import React, { useState } from "react";
+import SelectVehicleOptions from "../../components/forms/SelectVehicleOptions";
 import { carAttributes } from "../../basicData/vehicles/carAttributes";
-import { MarkEmailUnreadTwoTone } from "@mui/icons-material";
 
-const AddBus = () => {
+const AddCar = () => {
   const [selectedValues, setSelectedValues] = useState({
     transmission: [],
     drive: [],
@@ -44,68 +43,77 @@ const AddBus = () => {
               label="Name"
               variant="standard"
             />
+
+            <TextField
+              fullWidth
+              id="hastkraft"
+              label="Hastkraft"
+              name="hastkraf"
+              variant="standard"
+              type="number"
+            />
           </Box>
 
-          <SelectElectronicOption
+          <SelectVehicleOptions
             label="Modellår"
             value={selectedValues.modellAr}
             changeHandler={(event) => changeHandler(event, "modellAr")}
             options={carAttributes.modellAr}
           />
-          <SelectElectronicOption
+          <SelectVehicleOptions
             label="Miltal"
             value={selectedValues.miltal}
             changeHandler={(event) => changeHandler(event, "miltal")}
             options={carAttributes.miltal}
           />
 
-          <SelectElectronicOption
+          <SelectVehicleOptions
             label="Pris"
             value={selectedValues.priser}
             changeHandler={(event) => changeHandler(event, "priser")}
             options={carAttributes.priser}
           />
-          <SelectElectronicOption
+          <SelectVehicleOptions
             label="Bränsle"
             value={selectedValues.drivmedel}
             changeHandler={(event) => changeHandler(event, "drivmedel")}
             options={carAttributes.drivmedel}
           />
-          <SelectElectronicOption
+          <SelectVehicleOptions
             label="Växellåda"
             value={selectedValues.batteryHealth}
             changeHandler={(event) => changeHandler(event, "transmission")}
             options={carAttributes.transmission}
           />
 
-          <SelectElectronicOption
+          <SelectVehicleOptions
             label="Märke"
             value={selectedValues.marken}
             changeHandler={(event) => changeHandler(event, "marken")}
             options={carAttributes.marken}
           />
 
-          <SelectElectronicOption
+          <SelectVehicleOptions
             label="Drivning"
             value={selectedValues.drive}
             changeHandler={(event) => changeHandler(event, "drive")}
             options={carAttributes.drive}
           />
 
-          <SelectElectronicOption
+          <SelectVehicleOptions
             label="Färg"
             value={selectedValues.colors}
             changeHandler={(event) => changeHandler(event, "colors")}
             options={carAttributes.colors}
           />
-          <SelectElectronicOption
+          <SelectVehicleOptions
             label="Skick"
             value={selectedValues.condition}
             changeHandler={(event) => changeHandler(event, "condition")}
             options={carAttributes.condition}
           />
 
-          <SelectElectronicOption
+          <SelectVehicleOptions
             label="Kvitto"
             value={selectedValues.receipt}
             changeHandler={(event) => changeHandler(event, "receipt")}
@@ -125,4 +133,5 @@ const AddBus = () => {
     </div>
   );
 };
-export default AddBus;
+
+export default AddCar;

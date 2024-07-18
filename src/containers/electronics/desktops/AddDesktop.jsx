@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { ipadOptionsBasicData } from "../../../basicData/electronics/ipdas/ipad";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import SelectElectronicOption from "../../../reuseableComponents/forms/SelectElectronicOption";
+import { desktopOptionsBasicData } from "../../../basicData/electronics/desktops/desktop";
+import SelectElectronicOption from "../../../components/forms/SelectElectronicOption";
+import MonitorIcon from "@mui/icons-material/Monitor";
 import { Box, Button, TextField } from "@mui/material";
-import TabletMacIcon from "@mui/icons-material/TabletMac";
-const AddIpad = () => {
+
+const AddDesktop = () => {
   const [selectedValues, setSelectedValues] = useState({
-    name: "",
     batteryHealth: [],
+    name: "",
     screenSize: [],
     colors: [],
     condition: [],
@@ -31,7 +31,7 @@ const AddIpad = () => {
   return (
     <div className="container mt-2">
       <h3 className="lead">
-        Sälj Ipad <TabletMacIcon />
+        Sälj Ipad <MonitorIcon />
       </h3>
       <div className="row">
         <form>
@@ -40,7 +40,6 @@ const AddIpad = () => {
               fullWidth
               id="standard-basic"
               label="Name"
-              value={selectedValues.name}
               variant="standard"
             />
           </Box>
@@ -48,40 +47,40 @@ const AddIpad = () => {
             label="Batterihälsa"
             value={selectedValues.batteryHealth}
             changeHandler={(event) => changeHandler(event, "batteryHealth")}
-            options={ipadOptionsBasicData.batteryHealth}
+            options={desktopOptionsBasicData.batteryHealth}
           />
           <SelectElectronicOption
             label="Skärmstorlek"
             value={selectedValues.screenSize}
             changeHandler={(event) => changeHandler(event, "screenSize")}
-            options={ipadOptionsBasicData.screenSize}
+            options={desktopOptionsBasicData.screenSize}
           />
 
           <SelectElectronicOption
             label="Färg"
             value={selectedValues.colors}
             changeHandler={(event) => changeHandler(event, "colors")}
-            options={ipadOptionsBasicData.colors}
+            options={desktopOptionsBasicData.colors}
           />
           <SelectElectronicOption
             label="Skick"
             value={selectedValues.condition}
             changeHandler={(event) => changeHandler(event, "condition")}
-            options={ipadOptionsBasicData.condition}
+            options={desktopOptionsBasicData.condition}
           />
 
           <SelectElectronicOption
             label="Kvitto"
             value={selectedValues.receipt}
             changeHandler={(event) => changeHandler(event, "receipt")}
-            options={ipadOptionsBasicData.receipt}
+            options={desktopOptionsBasicData.receipt}
           />
 
           <SelectElectronicOption
             label="Ägtid"
             value={selectedValues.ownershipDuration}
             changeHandler={(event) => changeHandler(event, "ownershipDuration")}
-            options={ipadOptionsBasicData.ownershipDuration}
+            options={desktopOptionsBasicData.ownershipDuration}
           />
 
           <Button
@@ -98,4 +97,4 @@ const AddIpad = () => {
   );
 };
 
-export default AddIpad;
+export default AddDesktop;

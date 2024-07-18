@@ -8,61 +8,62 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import MobilePage from "./components/electronics/mobiles/MobilePage";
-import NotFound from "./components/error/NotFound";
-import ElectronicList from "./components/electronics/ElectronicList";
-import Clothes from "./components/clothes/Clothes";
-import LaptopPage from "./components/electronics/laptops/LaptopPage";
-import Adults from "./components/clothes/adults/Adults";
-import Women from "./components/clothes/adults/WomenPage";
-import ChildrenList from "./components/clothes/children/ChildrenList";
-import Men from "./components/clothes/adults/MenPage";
-import Dashboard from "./components/dashboard/Dashboard";
-import IpadPage from "./components/electronics/ipads/IpadPage";
-import AddIpad from "./components/electronics/ipads/AddIpad";
-import AddLaptop from "./components/electronics/laptops/AddLaptop";
-import DesktopPage from "./components/electronics/desktops/DesktopPage";
-import AddDesktop from "./components/electronics/desktops/AddDesktop";
-import AppSearchBar from "./components/appbar/Appbar";
-import VehicleList from "./components/vehicles/VehicleList";
-import AddTrack from "./components/vehicles/AddTrack";
-import AddCar from "./components/vehicles/AddCar";
-import CarPage from "./components/vehicles/CarPage";
-import TrackPage from "./components/vehicles/TrackPage";
-import MopedPage from "./components/vehicles/MopedPage";
-import AddMoped from "./components/vehicles/AddMoped";
-import BusPage from "./components/vehicles/BusPage";
-import AddBus from "./components/vehicles/AddBus";
-import AddMotorCycle from "./components/vehicles/AddMotorCycle";
-import MotorCyclePage from "./components/vehicles/MotorCyclePage";
-import HobbyList from "./components/hobbies/HobbyList";
-import BoatPage from "./components/hobbies/boats/BoatPage";
-import BookPage from "./components/hobbies/books/BookPage";
-import AddBook from "./components/hobbies/books/AddBook";
-import AddBoat from "./components/hobbies/boats/AddBoat";
-import HouseList from "./components/houses/HouseList";
-import VillaPage from "./components/houses/sell/VillaSellPage";
-import AllHouses from "./components/houses/AllHouses";
-import AppartmentSellPage from "./components/houses/sell/AppartmentSellPage";
-import AppartmentRentPage from "./components/houses/rent/AppartmentRentPage";
-import HouseRentPage from "./components/houses/rent/HusRentPage";
-import VilaRentPage from "./components/houses/rent/VilaRentPage";
-import AddSellHouse from "./components/houses/sell/AddSellHouse";
-import HouseSellPage from "./components/houses/sell/HusSellPage";
-import VillaSellPage from "./components/houses/sell/VillaSellPage";
-import AddRentHouse from "./components/houses/rent/AddRentHouse";
-import HouseRentList from "./components/houses/rent/HouseRentList";
-import AddMobile from "./components/electronics/mobiles/AddMobile";
-import GirlsPage from "./components/clothes/children/girls/GirlsPage";
-import BoysPage from "./components/clothes/children/boys/BoysPage";
-import AddGirl from "./components/clothes/children/girls/AddGirl";
-import AddBoy from "./components/clothes/children/boys/AddBoy";
-import HouseSellList from "./components/houses/sell/HouseSellList";
-import MenPage from "./components/clothes/adults/MenPage";
-import WomenPage from "./components/clothes/adults/WomenPage";
-import AddMan from "./components/clothes/adults/AddMan";
-import AddWoman from "./components/clothes/adults/AddWoman";
-import MobileList from "./components/electronics/mobiles/MobileList";
+import MobilePage from "./containers/electronics/mobiles/MobilePage";
+import NotFound from "./containers/error/NotFound";
+import ElectronicList from "./containers/electronics/ElectronicList";
+import Clothes from "./containers/clothes/Clothes";
+import LaptopPage from "./containers/electronics/laptops/LaptopPage";
+import Adults from "./containers/clothes/adults/Adults";
+import Women from "./containers/clothes/adults/WomenPage";
+import ChildrenList from "./containers/clothes/children/ChildrenList";
+import Men from "./containers/clothes/adults/MenPage";
+import Dashboard from "./containers/dashboard/Dashboard";
+import IpadPage from "./containers/electronics/ipads/IpadPage";
+import AddIpad from "./containers/electronics/ipads/AddIpad";
+import AddLaptop from "./containers/electronics/laptops/AddLaptop";
+import DesktopPage from "./containers/electronics/desktops/DesktopPage";
+import AddDesktop from "./containers/electronics/desktops/AddDesktop";
+import AppSearchBar from "./containers/appbar/Appbar";
+import VehicleList from "./containers/vehicles/VehicleList";
+import AddTrack from "./containers/vehicles/AddTrack";
+import AddCar from "./containers/vehicles/AddCar";
+import CarPage from "./containers/vehicles/CarPage";
+import TrackPage from "./containers/vehicles/TrackPage";
+import MopedPage from "./containers/vehicles/MopedPage";
+import AddMoped from "./containers/vehicles/AddMoped";
+import BusPage from "./containers/vehicles/BusPage";
+import AddBus from "./containers/vehicles/AddBus";
+import AddMotorCycle from "./containers/vehicles/AddMotorCycle";
+import MotorCyclePage from "./containers/vehicles/MotorCyclePage";
+import HobbyList from "./containers/hobbies/HobbyList";
+import BoatPage from "./containers/hobbies/boats/BoatPage";
+import BookPage from "./containers/hobbies/books/BookPage";
+import AddBook from "./containers/hobbies/books/AddBook";
+import AddBoat from "./containers/hobbies/boats/AddBoat";
+import HouseList from "./containers/houses/HouseList";
+import VillaPage from "./containers/houses/sell/VillaSellPage";
+import AllHouses from "./containers/houses/AllHouses";
+import AppartmentSellPage from "./containers/houses/sell/AppartmentSellPage";
+import AppartmentRentPage from "./containers/houses/rent/AppartmentRentPage";
+import HouseRentPage from "./containers/houses/rent/HusRentPage";
+import VilaRentPage from "./containers/houses/rent/VilaRentPage";
+import AddSellHouse from "./containers/houses/sell/AddSellHouse";
+import HouseSellPage from "./containers/houses/sell/HusSellPage";
+import VillaSellPage from "./containers/houses/sell/VillaSellPage";
+import AddRentHouse from "./containers/houses/rent/AddRentHouse";
+import HouseRentList from "./containers/houses/rent/HouseRentList";
+import AddMobile from "./containers/electronics/mobiles/AddMobile";
+import GirlsPage from "./containers/clothes/children/girls/GirlsPage";
+import BoysPage from "./containers/clothes/children/boys/BoysPage";
+import AddGirl from "./containers/clothes/children/girls/AddGirl";
+import AddBoy from "./containers/clothes/children/boys/AddBoy";
+import HouseSellList from "./containers/houses/sell/HouseSellList";
+import MenPage from "./containers/clothes/adults/MenPage";
+import WomenPage from "./containers/clothes/adults/WomenPage";
+import AddMan from "./containers/clothes/adults/AddMan";
+import AddWoman from "./containers/clothes/adults/AddWoman";
+import MobileList from "./containers/electronics/mobiles/MobileList";
+/*
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -315,14 +316,14 @@ const routes = createBrowserRouter([
     ],
   },
 ]);
+*/
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <AppSearchBar />
-    <RouterProvider router={routes}>
-      <App />
-    </RouterProvider>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { Link, Outlet } from "react-router-dom";
 import {getElectronics} from "../../../backend/api";
-import MainCard from "../../../reuseableComponents/MainCard";
+import MainCard from "../../../components/MainCard";
 import {Grid, imageListClasses} from "@mui/material";
 import Dashboard from "../../dashboard/Dashboard";
 import {decodeBase64Image} from "../../../helperFunctions/decodeImage";
